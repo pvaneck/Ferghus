@@ -21,7 +21,7 @@
   "scripts": {
     "postinstall": "bower install --config.interactive=false",
     "prestart": "npm install",
-    "start": "http-server ./ui/app -a 0.0.0.0 -p 8080",
+    "start": "php -S 0.0.0.0.:8000 -t ferghus",
     "pretest": "npm install",
     "lint": "eslint -c ./.eslintrc --no-color ./ui"
   }
