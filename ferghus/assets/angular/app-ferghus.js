@@ -1,4 +1,4 @@
 /** Angular App Code */
-(function(){
+(function() {
 	var app = angular.module('ferghus', [ ]);
 })();
