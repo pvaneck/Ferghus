@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 
-<html id="ng-app" ng-app="FerghusApp">
+<html id="ng-app" ng-app="brynn">
     <head>
         <meta charset="utf-8">
         <meta name="description" content="Ferghus Simulator">
         <meta name="viewport" content="width=device-width">
         <title>Brynn - Enchantment Simulator</title>
 
-        <script src="app.js"></script>
-
+        <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/common.css" rel="stylesheet">
+        <link href="assets/css/brynn.css" rel="stylesheet">
+        <script src="assets/angular/app-brynn.js"></script>
     <head>
 
     <body>
-        <h2>Brynn - Enchantment Simulator</h2>
-        <h3>"Oh great, it's you again."</h3>
+        <img class="bg" src="assets/img/magic.jpg">
+        <audio id="amb" autoplay loop>
+            <source src="assets/sound/amb_magic_laboratory.mp3" type="audio/mpeg">
+            <source src="assets/sound/amb_magic_laboratory.ogg" type="audio/ogg">
+        </audio>
+
+        <h2 class="header">Brynn - Enchantment Simulator</h2>
+        <h3 class="header">"Oh great, it's you again."</h3>
+
+        <!-- Placed at the end of the document so the page load faster -->
+        <script src="assets/lib/jquery/dist/jquery.min.js"></script>
+        <script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="assets/lib/gsap/src/minified/TweenMax.min.js"></script>
+        <script src="assets/js/common.js"></script>
+        <script src="assets/js/brynn.js"></script>
     </body>
-
 </html>
-

@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 
-<html id="ng-app" ng-app="FerghusApp">
+<html id="ng-app" ng-app="ferghus">
     <head>
         <meta charset="utf-8">
         <meta name="description" content="Ferghus Simulator">
         <meta name="viewport" content="width=device-width">
-        <title>Fergus - Enhancement Simulator</title>
+        <title>Ferghus - Enhancement Simulator</title>
 
-        <script src="app.js"></script>
-
+        <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/common.css" rel="stylesheet">
+        <link href="assets/css/ferghus.css" rel="stylesheet">
+        <script src="assets/angular/app-ferghus.js"></script>
     <head>
 
     <body>
-        <h2>Fergus - Enhancement Simulator</h2>
-        <h3>"My shoulder hurts from all that hammering."</h3>
+        <img class="bg" src="assets/img/forge.jpg">
+        <audio id="amb" autoplay loop>
+            <source src="assets/sound/amb_blacksmith.mp3" type="audio/mpeg">
+            <source src="assets/sound/amb_blacksmith.ogg" type="audio/ogg">
+        </audio>
+
+        <h2 class="header">Fergus - Enhancement Simulator</h2>
+        <h3 class="header">"My shoulder hurts from all that hammering."</h3>
+
+        <!-- Placed at the end of the document so the page load faster -->
+        <script src="assets/lib/jquery/dist/jquery.min.js"></script>
+        <script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="assets/lib/gsap/src/minified/TweenMax.min.js"></script>
+        <script src="assets/js/common.js"></script>
+        <script src="assets/js/ferghus.js"></script>
     </body>
 </html>

@@ -1,0 +1,13 @@
+body {
+	background-color: #262622;
+}
+
+.poison {
+	padding-right: 0;
+	background-color: #1b1b1b;
+	border-radius: 8px;
+}
+
+.poison li {
+	text-align: center;
+}

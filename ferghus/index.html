@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 
-<html id="ng-app" ng-app="ForgeApp">
+<html>
     <head>
         <meta charset="utf-8">
         <meta name="description" content="Forge Simulators">
         <meta name="viewport" content="width=device-width">
         <title>Welcome to the Forge</title>
 
-        <script src="app.js"></script>
-
+        <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/common.css" rel="stylesheet">
+        <link href="assets/css/index.css" rel="stylesheet">
     <head>
 
     <body>
         <h2>Welcome to the Forge.</h2>
-        <h3>Select your Poison:</h3>
-        <ul>
-            <li><a href="\ferghus.html">Ferghus</a></li>
-            <li><a href="\brynn.html">Brynn</a></li>
+        <h3>Select your Poison</h3>
+        <ul class="col-xs-12 col-sm-5 col-md-4 col-lg-3 nav nav-pills nav-stacked poison">
+            <li><a href="ferghus.html">Ferghus</a></li>
+            <li><a href="brynn.html">Brynn</a></li>
         </ul>
+
+        <!-- Placed at the end of the document so the page load faster -->
+        <script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
-
 </html>
-
