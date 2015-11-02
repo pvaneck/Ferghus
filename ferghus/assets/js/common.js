@@ -1,6 +1,6 @@
 function bgSway() {
 	var bg = $("img.bg");
-	TweenMax.to(bg, 8, {left:32, ease:Power1.easeInOut});
-	TweenMax.to(bg, 8, {left:-32, ease:Power1.easeInOut, delay: 8, onComplete:bgSway});
+	TweenMax.to(bg, 12, {x:64, ease:Sine.easeInOut});
+	TweenMax.to(bg, 12, {x:-64, ease:Sine.easeInOut, delay: 12, onComplete:bgSway});
 }
 bgSway();
