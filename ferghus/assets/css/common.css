@@ -11,7 +11,7 @@ h3 {
 	color: #aaa;
 }
 
-img.bg {
+.bg {
 	/* Set rules to fill background */
 	min-height: 100%;
 	min-width: 1024px;
@@ -24,12 +24,12 @@ img.bg {
 	transform: matrix(1.1, 0, 0, 1.1, 0, 0);
 	position: fixed;
 	top: -32px;
-	left: -32px;
+	left: 0px;
 	z-index: -1;
 }
 
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
-	img.bg {
+	.bg {
 		left: 50%;
 		margin-left: -512px;	/* 50% */
 	}
