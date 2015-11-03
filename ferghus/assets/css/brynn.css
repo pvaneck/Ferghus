@@ -1,3 +1,21 @@
-.bg {
+#bg {
 	background-image: url(/assets/img/magic.jpg);
+}
+
+#enchant {
+	width: 639px;
+	height: 441px;
+	background-image: url(/assets/img/enchant_options.png);
+	position: absolute;
+	left: 8px;
+	z-index: 3;
+}
+
+#brynn {
+	width: 426px;
+	height: 512px;
+	background-image: url(/assets/img/brynn.png);
+	position: absolute;
+	bottom: 0;
+	z-index: 0;
 }
