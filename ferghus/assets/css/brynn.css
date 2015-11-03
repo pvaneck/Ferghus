@@ -10,44 +10,39 @@
 	left: 8px;
 	z-index: 3;
 }
-
+#enchant a {
+	/*background-color: rgba(0, 0, 0, 0.5);
+	border: solid 1px;
+	border-color: rgba(255, 255, 255, 0.5);*/
+	position: absolute;
+}
 #enchant #magicElixir {
 	width: 166px;
 	height: 45px;
-	/*background-color: rgba(0, 0, 0, 0.75);*/
-	position: absolute;
 	left: 433px;
 	top: 79px;
 }
 #enchant #blessedMagicElixir {
 	width: 166px;
 	height: 45px;
-	/*background-color: rgba(0, 0, 0, 0.75);*/
-	position: absolute;
 	left: 433px;
 	top: 133px;
 }
 #enchant #magicElixirOfLife {
 	width: 166px;
 	height: 45px;
-	/*background-color: rgba(0, 0, 0, 0.75);*/
-	position: absolute;
 	left: 433px;
 	top: 187px;
 }
 #enchant #begin {
 	width: 120px;
 	height: 30px;
-	/*background-color: rgba(0, 0, 0, 0.75);*/
-	position: absolute;
 	left: 81px;
 	top: 388px;
 }
 #enchant #cancel {
 	width: 120px;
 	height: 30px;
-	/*background-color: rgba(0, 0, 0, 0.75);*/
-	position: absolute;
 	left: 210px;
 	top: 388px;
 }
