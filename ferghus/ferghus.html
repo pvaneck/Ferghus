@@ -17,13 +17,24 @@
 
     <body>
         <div id="bg"></div>
+        <div id="vignette"></div>
         <audio id="amb" autoplay loop>
             <source src="assets/sound/amb_blacksmith.mp3" type="audio/mpeg">
             <source src="assets/sound/amb_blacksmith.ogg" type="audio/ogg">
         </audio>
 
-        <h2 class="header">Fergus - Enhancement Simulator</h2>
-        <h3 class="header">"My shoulder hurts from all that hammering."</h3>
+        <div class="container-fluid">
+            <div class="row">
+                <div id="enhance">
+                    <a href="javascript:void(0);" id="enhanceBegin"></a>
+                </div>
+                <div id="ferghus"></div>
+                <div id="greeting">
+                    <h2 class="header">Fergus - Enhancement Simulator</h2>
+                    <h3 class="header">"My shoulder hurts from all that hammering."</h3>
+                </div>
+            </div>
+        </div>
 
         <!-- Placed at the end of the document so the page load faster -->
         <script src="assets/lib/jquery/dist/jquery.min.js"></script>

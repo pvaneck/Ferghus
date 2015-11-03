@@ -1,3 +1,21 @@
 #bg {
 	background-image: url(/assets/img/forge.jpg);
 }
+
+#enhance {
+	width: 429px;
+	height: 536px;
+	background-image: url(/assets/img/enhance.png);
+	position: absolute;
+	left: 8px;
+	z-index: 3;
+}
+
+#ferghus {
+	width: 512px;
+	height: 512px;
+	background-image: url(/assets/img/ferghus.png);
+	position: absolute;
+	bottom: 0;
+	z-index: 0;
+}
