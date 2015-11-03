@@ -21,7 +21,7 @@ h3 {
 	height: auto;
 	
 	/* Set up scale and positioning */
-	transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+	transform: matrix(1.1, 0, 0, 1.1, 0, 0) rotate(0.0003deg);
 	position: fixed;
 	top: -32px;
 	left: 0px;
