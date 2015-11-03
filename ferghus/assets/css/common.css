@@ -1,6 +1,11 @@
 body {
 	padding-left: 24px;
 	padding-right: 24px;
+	cursor: url(/assets/img/cursor/Hero_Normal.cur), auto;
+}
+
+a, #mute {
+	cursor: url(/assets/img/cursor/Hero_press.cur) 7 0, auto;
 }
 
 h2 {
@@ -70,7 +75,6 @@ h3 {
     margin-right: 12px;
     padding: 11px 23px;
     z-index: 2;
-    cursor: pointer;
 }
 
 #muteIcon {
