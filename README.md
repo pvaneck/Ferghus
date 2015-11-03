@@ -1,5 +1,5 @@
 # Ferghus
-The Ferghus Simulator - Welcome to the Forge.
+The Vindictus RNG Simulator - Welcome to the Forge.
 
 
 ####Install dependencies
@@ -25,3 +25,12 @@ The Ferghus Simulator - Welcome to the Forge.
 - `npm start`
 
 The server will use 0.0.0.0:8000.
+
+####Related links
+
+Evernote - Design document
+- https://www.evernote.com/Home.action#n=c1f7e1de-5919-4a2e-a64a-a4fc14375afa&ses=4&sh=2&sds=5&
+
+Trello - Development tracker
+- https://trello.com/b/jIRt5WOu/the-forge
+
