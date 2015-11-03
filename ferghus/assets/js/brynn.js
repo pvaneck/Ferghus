@@ -1,1 +1,1 @@
-/* Custom JS goes here */
+var amb_volume = 1;
