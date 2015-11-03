@@ -3,41 +3,31 @@ body {
 	padding-right: 24px;
 	cursor: url(/assets/img/cursor/Hero_Normal.cur), auto;
 }
-
 a, #mute {
 	cursor: url(/assets/img/cursor/Hero_press.cur) 7 0, auto;
 }
-
 h2 {
 	color: #eee;
 }
-
 h3 {
 	color: #aaa;
 	margin-top: 12px;
 }
 
 #bg {
-	/* Set rules to fill background */
-	min-height: 100%;
-	min-width: 1024px;
-	
-	/* Set up proportionate scaling */
-	width: 100%;
-	height: auto;
-	
-	/* Set up scale and positioning */
-	transform: matrix(1.1, 0, 0, 1.1, 0, 0) rotate(0.0003deg);
+	min-width: 1280px;
+	width: 100vw;
+	height: 100vh;
 	position: fixed;
-	top: -32px;
+	transform: translate(-64px, 0) scale(1.1, 1.1) rotate(0.0003deg);
+	top: -5%;
 	left: 0px;
 	z-index: -1;
 }
-
-@media screen and (max-width: 1024px) { /* Specific to this particular image */
+@media screen and (max-width: 1280px) {
 	#bg {
 		left: 50%;
-		margin-left: -512px;	/* 50% */
+		margin-left: -512px;
 	}
 }
 
