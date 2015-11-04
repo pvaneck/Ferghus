@@ -11,8 +11,6 @@
         <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/css/common.css" rel="stylesheet">
         <link href="assets/css/brynn.css" rel="stylesheet">
-        <script src="assets/lib/angular/angular.min.js"></script>
-        <script src="assets/angular/app-brynn.js"></script>
     <head>
 
     <body>
@@ -25,12 +23,16 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div id="enchant">
-                    <a id="magicElixir"></a>
-                    <a id="blessedMagicElixir"></a>
-                    <a id="magicElixirOfLife"></a>
-                    <a id="begin"></a>
-                    <a id="cancel"></a>
+                <div id="enchant" ng-controller="EnchantController as enchant">
+                    <div class="text" id="amp"></div>
+                    <div class="text" id="magic">
+                        Current Magic : {{enchant.magic}}/100 (Current Success Rate {{enchant.success}}%)
+                    </div>
+                    <div class="canClick" id="magicElixir" ng-click="enchant.addElixir(1)"></div>
+                    <div class="canClick" id="blessedMagicElixir" ng-click="enchant.addElixir(2)"></div>
+                    <div class="canClick" id="magicElixirOfLife" ng-click="enchant.addElixir(3)"></div>
+                    <div class="canClick" id="begin" ng-click="enchant.begin()"></div>
+                    <div class="canClick" id="cancel" ng-click="enchant.cancel()"></div>
                 </div>
                 <div id="brynn"></div>
                 <div id="greeting">
@@ -44,10 +46,13 @@
         </div>
 
         <!-- Placed at the end of the document so the page load faster -->
+        <script src="assets/lib/angular/angular.min.js"></script>
+        <script src="assets/angular/app-brynn.js"></script>
         <script src="assets/lib/jquery/dist/jquery.min.js"></script>
         <script src="assets/lib/bpopup/jquery.bpopup.min.js"></script>
         <script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="assets/lib/gsap/src/minified/TweenMax.min.js"></script>
+        <script src="assets/lib/mersennetwister/src/MersenneTwister.js"></script>
         <script src="assets/js/common.js"></script>
         <script src="assets/js/brynn.js"></script>
     </body>
