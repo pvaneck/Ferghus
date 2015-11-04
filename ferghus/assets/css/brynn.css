@@ -111,6 +111,43 @@
 	background-image: url(/assets/img/enchant_cancel_active.jpg);
 }
 
+#enchant #amplify {
+	width: 120px;
+	height: 30px;
+	left: 455px;
+	top: 388px;
+	border-radius: 4px;
+}
+
+.amplify-lit {
+    background-image: url(/assets/img/amplify_magic.jpg);
+}
+
+.amplify-lit:hover {
+    background-image: url(/assets/img/amplify_magic_hover.jpg);
+}
+
+.amplify-lit:active {
+    background-image: url(/assets/img/amplify_magic_active.jpg);
+}
+
+.amplify-unlit {
+    background-image: url(/assets/img/amplify_magic_unlit.jpg);
+}
+
+.elixir {
+    width: 100%;
+    height: 100%;
+}
+
+.elixir:hover {
+    box-shadow: inset 0px 0px 5px #9c8279;
+}
+
+.selected-elixir {
+    box-shadow: inset 0px 0px 10px #b09389;
+}
+
 #brynn {
 	width: 426px;
 	height: 512px;

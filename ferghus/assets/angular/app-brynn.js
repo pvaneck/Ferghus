@@ -8,6 +8,7 @@
 		this.successEnd = 40;
 		this.success = this.successStart;
 		var fill = $("#fill");
+		this.selectedElixir = null;
 
 		this.calcSuccess = function() {
 			this.success = Math.floor(this.successStart + (this.successEnd - this.successStart) * (this.magic / 100.0));
