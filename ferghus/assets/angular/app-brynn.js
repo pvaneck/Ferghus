@@ -7,11 +7,14 @@
 		this.successStart = 25;
 		this.successEnd = 40;
 		this.success = this.successStart;
-		var fill = $("#fill");
 		this.selectedElixir = null;
+		var fill = $("#fill");
 
 		this.calcSuccess = function() {
-			this.success = Math.floor(this.successStart + (this.successEnd - this.successStart) * (this.magic / 100.0));
+			if (this.magic <= 100)
+				this.success = Math.floor(this.successStart + (this.successEnd - this.successStart) * (this.magic / 100.0));
+			else
+				this.success = this.successStart;
 		}
 
 		this.addMagic = function(br) {

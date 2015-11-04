@@ -7,13 +7,19 @@ function randomFloat(min, max) {
 	return mt.random() * (max - min) + min;
 }
 
-// Prevent text selection
-$(".canClick").mousedown(function(e){
-	e.preventDefault();
-	$(this).addClass("active");
+// Manual .active for buttons (fixes Firefox)
+var lastActive = null;
+$(".canClick").mousedown(function(e) {
+	lastActive = $(this);
+	lastActive.addClass("active");
 });
-$(".canClick").mouseup(function(e){
-	$(this).removeClass("active");
+$("body").mouseup(function(e) {
+	lastActive.removeClass("active");
+});
+
+// Prevent text selection
+$("body").mousedown(function(e) {
+	e.preventDefault();
 });
 
 // Endless sway ease for BG
