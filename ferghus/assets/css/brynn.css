@@ -48,6 +48,7 @@
 	z-index: 5;
 }
 #enchant .text {
+	font-family: Arial, Helvetica, sans-serif;
 	z-index: 5;
 }
 #enchant .text#amp {
@@ -59,7 +60,6 @@
 	left: 20px;
 	top: 348px;
 	color: #cacaca;
-	font-family: sans-serif;
 	font-size: 0.92em;
 	font-weight: bold;
 	text-align: center;
@@ -152,7 +152,8 @@
 	width: 426px;
 	height: 512px;
 	background-image: url(/assets/img/brynn.png);
+	transform: scale(0.85, 0.85);
 	position: absolute;
-	bottom: 0;
+	bottom: -38px;
 	z-index: 0;
 }

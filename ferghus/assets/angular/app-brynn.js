@@ -18,7 +18,7 @@
 			this.magic = this.magic + br;
 			this.calcSuccess();
 			var fillTop = Math.max(143 - 143 * (this.magic / 100), 0);
-			TweenMax.to(fill, 0.5, {top:fillTop, ease:Power2.easeOut});
+			TweenMax.to(fill, 0.5, {top:fillTop, ease:Power4.easeOut});
 		}
 
 		this.addElixir = function(elixir) {
