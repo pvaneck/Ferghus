@@ -17,6 +17,24 @@
 	position: absolute;
 	z-index: 4;
 }
+#enchant #fill {
+	width: 310px;
+	height: 148px;
+	background: linear-gradient(to bottom, #230e37 0%, #6b213a 45%, #be7c3a 100%);
+	left: 49px;
+	top: 163px;
+}
+#enchant #fillOverlay {
+	width: 327px;
+	height: 163px;
+	background-image: url(/assets/img/enchant_gradient_overlay2.png);
+	left: 41px;
+	top: 150px;
+	z-index: 5;
+}
+#enchant .text {
+	z-index: 5;
+}
 #enchant .text#amp {
 
 }
