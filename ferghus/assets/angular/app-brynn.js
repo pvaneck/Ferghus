@@ -39,6 +39,8 @@
 					brMax = 5;
 					break;
 				default:
+					brMin = 0;
+					brMax = 0;
 					break;
 			}
 			this.addMagic(randomInt(brMin, brMax));
@@ -52,6 +54,7 @@
 			this.magic = 0;
 			this.calcSuccess();
 			fill.css("top", 143);
+			this.selectedElixir = null;
 		}
 	})
 })();
