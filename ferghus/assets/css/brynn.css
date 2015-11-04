@@ -55,11 +55,28 @@
 	left: 81px;
 	top: 388px;
 }
+
+#enchant #begin:hover {
+	background-image: url(/assets/img/enchant_begin_hover.jpg);
+}
+
+#enchant #begin:active {
+	background-image: url(/assets/img/enchant_begin_active.jpg);
+}
+
 #enchant #cancel {
 	width: 120px;
 	height: 30px;
 	left: 210px;
 	top: 388px;
+}
+
+#enchant #cancel:hover {
+	background-image: url(/assets/img/enchant_cancel_hover.jpg);
+}
+
+#enchant #cancel:active {
+	background-image: url(/assets/img/enchant_cancel_active.jpg);
 }
 
 #brynn {
