@@ -1,3 +1,15 @@
+// Helper functions
+var mt = new MersenneTwister();
+function randomInt(min, max) {
+	return Math.floor(mt.random() * (max - min + 1) + min);
+}
+function randomFloat(min, max) {
+	return mt.random() * (max - min) + min;
+}
+
+// Prevent text selection
+$("body").mousedown(function(e){ e.preventDefault(); });
+
 // Endless sway ease for BG
 function bgSway() {
 	var bg = $("#bg");

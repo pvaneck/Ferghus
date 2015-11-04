@@ -10,11 +10,26 @@
 	left: 8px;
 	z-index: 3;
 }
-#enchant a {
+#enchant div {
 	/*background-color: rgba(0, 0, 0, 0.5);
 	border: solid 1px;
 	border-color: rgba(255, 255, 255, 0.5);*/
 	position: absolute;
+	z-index: 4;
+}
+#enchant .text#amp {
+
+}
+#enchant .text#magic {
+	width: 366px;
+	height: 24px;
+	left: 20px;
+	top: 348px;
+	color: #cacaca;
+	font-family: sans-serif;
+	font-size: 0.92em;
+	font-weight: bold;
+	text-align: center;
 }
 #enchant #magicElixir {
 	width: 166px;
