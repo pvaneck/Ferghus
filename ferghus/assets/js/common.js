@@ -8,7 +8,13 @@ function randomFloat(min, max) {
 }
 
 // Prevent text selection
-$(".noSelect").mousedown(function(e){ e.preventDefault(); });
+$(".canClick").mousedown(function(e){
+	e.preventDefault();
+	$(this).addClass("active");
+});
+$(".canClick").mouseup(function(e){
+	$(this).removeClass("active");
+});
 
 // Endless sway ease for BG
 function bgSway() {

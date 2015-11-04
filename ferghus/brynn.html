@@ -27,22 +27,21 @@
                     <div id="fillContainer">
                         <div id="fill"></div>
                     </div>
-                    <div id="fillVoid"></div>
                     <div id="fillOverlay"></div>
                     <div class="text" id="amp"></div>
                     <div class="text" id="magic">
                         Current Magic : {{enchant.magic}}/100 (Current Success Rate {{enchant.success}}%)
                     </div>
 
-                    <div class="canClick noSelect" id="magicElixir"
+                    <div class="canClick" id="magicElixir"
                         ng-class="{'selected-elixir': enchant.selectedElixir == 1}"
                         ng-click="enchant.selectedElixir = 1"><div class='elixir'></div>
                     </div>
-                    <div class="canClick noSelect" id="blessedMagicElixir"
+                    <div class="canClick" id="blessedMagicElixir"
                         ng-class="{'selected-elixir': enchant.selectedElixir == 2}"
                         ng-click="enchant.selectedElixir = 2"><div class='elixir'></div>
                     </div>
-                    <div class="canClick noSelect" id="magicElixirOfLife"
+                    <div class="canClick" id="magicElixirOfLife"
                         ng-class="{'selected-elixir': enchant.selectedElixir == 3}"
                         ng-click="enchant.selectedElixir = 3"><div class='elixir'></div>
                     </div>
