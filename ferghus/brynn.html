@@ -24,15 +24,18 @@
         <div class="container-fluid">
             <div class="row">
                 <div id="enchant" ng-controller="EnchantController as enchant">
-                    <div id="fill"></div>
+                    <div id="fillContainer">
+                        <div id="fill"></div>
+                    </div>
+                    <div id="fillVoid"></div>
                     <div id="fillOverlay"></div>
                     <div class="text" id="amp"></div>
                     <div class="text" id="magic">
                         Current Magic : {{enchant.magic}}/100 (Current Success Rate {{enchant.success}}%)
                     </div>
-                    <div class="canClick" id="magicElixir" ng-click="enchant.addElixir(1)"></div>
-                    <div class="canClick" id="blessedMagicElixir" ng-click="enchant.addElixir(2)"></div>
-                    <div class="canClick" id="magicElixirOfLife" ng-click="enchant.addElixir(3)"></div>
+                    <div class="canClick noSelect" id="magicElixir" ng-click="enchant.addElixir(1)"></div>
+                    <div class="canClick noSelect" id="blessedMagicElixir" ng-click="enchant.addElixir(2)"></div>
+                    <div class="canClick noSelect" id="magicElixirOfLife" ng-click="enchant.addElixir(3)"></div>
                     <div class="canClick" id="begin" ng-click="enchant.begin()"></div>
                     <div class="canClick" id="cancel" ng-click="enchant.cancel()"></div>
                 </div>
