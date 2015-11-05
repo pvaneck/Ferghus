@@ -1,2 +1,2 @@
-var amb = new Audio("assets/sound/amb_blacksmith.ogg");
-var amb_volume = 0.25;
+audioAmbience = setAudio("assets/sound/amb_blacksmith");
+var ambienceVolume = 0.25;

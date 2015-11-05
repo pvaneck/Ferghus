@@ -14,7 +14,8 @@ $(".canClick").mousedown(function(e) {
 	lastActive.addClass("active");
 });
 $("body").mouseup(function(e) {
-	lastActive.removeClass("active");
+	if (lastActive !== null)
+		lastActive.removeClass("active");
 });
 
 // Prevent text selection
@@ -30,28 +31,38 @@ function bgSway() {
 }
 bgSway();
 
-// Audio toggling
+// Audio initializing and toggling
+var audioAmbience; // See page-specific JS
+var audioEnhance = setAudio("assets/sound/enhance");
 var mute = $("#mute");
 var muted = false;
+
+function setAudio(path) {
+	var audio = new Audio();
+	if (audio.canPlayType("audio/ogg"))
+		return new Audio(path + ".ogg");
+	else
+		return new Audio(path + ".mp3");
+}
 
 mute.click(function () {
 	muted = !muted;
 	if (muted) {
 		$(this).css("opacity", "0.5");
-		amb.volume = 0;
+		audioAmbience.volume = 0;
 	} else {
 		$(this).css("opacity", "1");
-		amb.volume = amb_volume;
+		audioAmbience.volume = ambienceVolume;
 	}
 });
 
 // On-load logic
 $(document).ready(function () {
-	amb.volume = amb_volume;
-	amb.play();
+	audioAmbience.volume = ambienceVolume;
+	audioAmbience.play();
 
 	// Gapless audio looping
-	amb.addEventListener("timeupdate", function() {
+	audioAmbience.addEventListener("timeupdate", function() {
 	    var buffer = .44;
 	    if(this.currentTime > this.duration - buffer) {
 	        this.currentTime = 0;

@@ -1,3 +1,7 @@
+.text {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 #bg {
 	background-image: url(/assets/img/magic.jpg);
 }
@@ -42,7 +46,8 @@
 }
 
 #enchant .text {
-	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-align: center;
 	z-index: 5;
 }
 #enchant .text#brEmpty {
@@ -53,8 +58,6 @@
 	top: 217px;
 	color: #4A4A4A;
 	font-size: 1.65em;
-	font-weight: bold;
-	text-align: center;
 }
 #enchant .text#brFull {
 	width: 80px;
@@ -65,12 +68,7 @@
 	color: #FFFAFD;
 	color: rgba(255, 255, 255, 0.95);
 	font-size: 1.65em;
-	font-weight: bold;
-	text-align: center;
 	display: none;
-}
-#enchant .text#amp {
-
 }
 #enchant .text#magic {
 	width: 366px;
@@ -79,18 +77,15 @@
 	top: 348px;
 	color: #cacaca;
 	font-size: 0.92em;
-	font-weight: bold;
-	text-align: center;
 }
-
 #enchant .text#ampsLeft {
 	width: 24px;
-	height: 24px;
+	height: 10px;
+	line-height: 10px;
 	left: 358px;
-	top: 77px;
+	top: 78px;
 	color: #9a8f74;
-	font-size: 9px;
-	text-align: center;
+	font-size: 0.65em;
 }
 
 #magicElixir {
@@ -170,6 +165,44 @@
 }
 .selected-elixir {
     box-shadow: inset 0px 0px 10px #b09389;
+}
+
+.popup#progress {
+	width: 361px;
+	height: 416px;
+	background-image: url(/assets/img/enchant_wheel_of_death.png);
+}
+
+#progressBar {
+	width: 192px;
+	height: 6px;
+	background-image: url(/assets/img/progress-filled.jpg);
+	position: absolute;
+	left: 87px;
+	top: 336px;
+	transform-origin: left 3px;
+	transform: scaleX(0);
+}
+
+.popup#result {
+	width: 200px;
+	height: 120px;
+	background-color: rgba(19, 28, 33, 0.75);
+	border: 1px solid #000;
+	border-radius: 6px;
+	box-shadow:
+		inset 0 0 1px #567,
+		inset 0 0 10px rgba(215, 235, 255, 0.15),
+		0 0 3px #000;
+}
+#resultText {
+	width: 100%;
+	height: 100%;
+	line-height: 120px;
+	color: #cacaca;
+	font-size: 0.92em;
+	font-weight: bold;
+	text-align: center;
 }
 
 #brynn {

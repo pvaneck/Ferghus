@@ -5,19 +5,22 @@
 	app.controller('EnchantController', ['$scope', function($scope) {
 		var scope = $scope;
 		var ctrl = this;
+
 		ctrl.magic = 0;
+		ctrl.ampsLeft = 5;
 		ctrl.successStart = 25;
 		ctrl.successEnd = 40;
 		ctrl.success = ctrl.successStart;
 		ctrl.selectedElixir = null;
 		ctrl.brEmpty = 100;
 		ctrl.brFull = 0;
-		ctrl.ampsLeft = 5;
+		ctrl.resultText = "Why...";
 
 		var fill = $("#fill");
 		var brEmptyText = $("#brEmpty");
 		var brFullText = $("#brFull");
 		var brValues = {empty:100, full:0};
+		var progressBar = $("#progressBar");
 
 		ctrl.calcSuccess = function() {
 			if (ctrl.magic <= 100)
@@ -30,7 +33,7 @@
 			if (brValues.empty < 41)
 				brEmptyText.css("display", "none");
 			if (brValues.full >= 41)
-				brFullText.css("display", "initial");
+				brFullText.css("display", "inherit");
 			scope.$apply(function() {
 				ctrl.brEmpty = Math.floor(brValues.empty);
 				ctrl.brFull = Math.ceil(brValues.full);
@@ -105,7 +108,7 @@
 			fill.css("top", 143);
 			brEmptyText.css("top", 217);
 			brFullText.css("top", 291);
-			brEmptyText.css("display", "initial");
+			brEmptyText.css("display", "inherit");
 			brFullText.css("display", "none");
 			ctrl.brEmpty = 100;
 			ctrl.brFull = 0;
@@ -115,7 +118,50 @@
 		}
 
 		ctrl.begin = function() {
-			
+			if (!muted)
+			{
+				audioEnhance.volume = 0.7;
+				audioEnhance.currentTime = 0;
+				audioEnhance.play();
+			}
+			$("#progress").bPopup({
+				speed: "fast",
+				followSpeed: 250,
+				opacity: 0.3,
+				modalClose: false,
+				autoClose: 1850,
+				onClose: ctrl.result
+			});
+			TweenMax.to(progressBar, 2.1, {
+				scaleX:1,
+				ease:Power0.easeOut
+			});
+		}
+
+		ctrl.result = function() {
+			var roll = randomInt(1, 100);
+			if (roll <= ctrl.success)
+			{
+				scope.$apply(function() {
+					ctrl.resultText = "Enchant successful.";
+				});
+			}
+			else
+			{
+				scope.$apply(function() {
+					ctrl.resultText = "Enchant failed.";
+				});
+			}
+			scope.$apply(function() {
+				ctrl.cancel();
+			});
+			$("#result").bPopup({
+				speed: "slow",
+				followSpeed: "fast",
+				modal: false,
+				autoClose: 2000
+			});
+			TweenMax.to(progressBar, 0, {scaleX:0});
 		}
 	}]);
 })();

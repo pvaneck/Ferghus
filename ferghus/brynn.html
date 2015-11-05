@@ -11,22 +11,21 @@
         <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/css/common.css" rel="stylesheet">
         <link href="assets/css/brynn.css" rel="stylesheet">
-    <head>
+    </head>
 
     <body>
         <div id="bg"></div>
         <div id="vignette"></div>
 
-        <div class="container-fluid">
+        <div class="container-fluid" ng-controller="EnchantController as enchant">
             <div class="row">
-                <div id="enchant" ng-controller="EnchantController as enchant">
+                <div id="enchant">
                     <div id="fillContainer">
                         <div id="fill"></div>
                     </div>
                     <div id="fillOverlay"></div>
                     <div class="text" id="brEmpty">{{enchant.brEmpty}}br</div>
                     <div class="text" id="brFull">{{enchant.brFull}}br</div>
-                    <div class="text" id="amp"></div>
                     <div class="text" id="ampsLeft">{{enchant.ampsLeft}}</div>
                     <div class="text" id="magic">
                         Current Magic : {{enchant.magic}}/100 (Current Success Rate {{enchant.success}}%)
@@ -54,6 +53,12 @@
                     </div>
                     <div class="canClick" id="begin" ng-click="enchant.begin()"></div>
                     <div class="canClick" id="cancel" ng-click="enchant.cancel()"></div>
+                </div>
+                <div class="popup" id="progress">
+                    <div id="progressBar"></div>
+                </div>
+                <div class="popup" id="result">
+                    <div class="text" id="resultText">{{enchant.resultText}}</div>
                 </div>
                 <div id="brynn"></div>
                 <div id="greeting">
