@@ -14,7 +14,7 @@
 		ctrl.selectedElixir = null;
 		ctrl.brEmpty = 100;
 		ctrl.brFull = 0;
-		ctrl.resultText = "Why...";
+		ctrl.resultText = "";
 
 		var fill = $("#fill");
 		var brEmptyText = $("#brEmpty");
