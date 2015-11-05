@@ -30,7 +30,7 @@
 				brFullText.css("display", "initial");
 			scope.$apply(function() {
 				scope.brEmpty = Math.floor(brValues.empty);
-				scope.brFull = Math.floor(brValues.full);
+				scope.brFull = Math.ceil(brValues.full);
 			});
 		}
 
