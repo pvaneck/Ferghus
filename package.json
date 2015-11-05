@@ -23,6 +23,6 @@
     "prestart": "npm install",
     "start": "php -S 0.0.0.0.:8000 -t ferghus",
     "pretest": "npm install",
-    "lint": "eslint -c ./.eslintrc --no-color ./ui"
+    "lint": "eslint -c ./.eslintrc ./ferghus"
   }
 }
