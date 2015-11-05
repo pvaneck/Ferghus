@@ -83,6 +83,16 @@
 	text-align: center;
 }
 
+#enchant .text#ampsLeft {
+	width: 24px;
+	height: 24px;
+	left: 358px;
+	top: 77px;
+	color: #9a8f74;
+	font-size: 9px;
+	text-align: center;
+}
+
 #magicElixir {
 	width: 166px;
 	height: 45px;

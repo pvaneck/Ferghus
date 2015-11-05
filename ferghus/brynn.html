@@ -31,6 +31,7 @@
                     <div class="text" id="brEmpty">{{enchant.brEmpty}}br</div>
                     <div class="text" id="brFull">{{enchant.brFull}}br</div>
                     <div class="text" id="amp"></div>
+                    <div class="text" id="ampsLeft">{{enchant.ampsLeft}}</div>
                     <div class="text" id="magic">
                         Current Magic : {{enchant.magic}}/100 (Current Success Rate {{enchant.success}}%)
                     </div>
@@ -51,7 +52,8 @@
                         <div class='elixir'></div>
                     </div>
                     <div    class="canClick"
-                            ng-class="{'amplify-unlit': !enchant.selectedElixir, 'amplify-lit': enchant.selectedElixir}"
+                            ng-class="{'amplify-unlit': !enchant.selectedElixir || enchant.ampsLeft <= 0, 
+                                       'amplify-lit': enchant.selectedElixir && enchant.ampsLeft > 0}"
                             id="amplify" ng-click="enchant.addElixir(enchant.selectedElixir)">
                     </div>
                     <div class="canClick" id="begin" ng-click="enchant.begin()"></div>

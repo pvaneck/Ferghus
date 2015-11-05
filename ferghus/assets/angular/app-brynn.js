@@ -12,6 +12,8 @@
 		ctrl.selectedElixir = null;
 		ctrl.brEmpty = 100;
 		ctrl.brFull = 0;
+		ctrl.ampsLeft = 5;
+
 		var fill = $("#fill");
 		var brEmptyText = $("#brEmpty");
 		var brFullText = $("#brFull");
@@ -61,6 +63,10 @@
 		}
 
 		ctrl.addElixir = function(elixir) {
+			if (ctrl.ampsLeft <= 0) {
+				return;
+		    }
+			
 			var brMin;
 			var brMax;
 			switch (elixir)
@@ -68,14 +74,17 @@
 				case 1:
 					brMin = 1;
 					brMax = 10;
+					ctrl.ampsLeft--;
 					break;
 				case 2:
 					brMin = 10;
 					brMax = 50;
+					ctrl.ampsLeft--;
 					break;
 				case 3:
 					brMin = 3;
 					brMax = 5;
+					ctrl.ampsLeft--;
 					break;
 				default:
 					brMin = 0;
@@ -91,6 +100,7 @@
 			TweenMax.killTweensOf(brFullText);
 			TweenMax.killTweensOf(brValues);
 			ctrl.magic = 0;
+			ctrl.ampsLeft = 5;
 			ctrl.calcSuccess();
 			fill.css("top", 143);
 			brEmptyText.css("top", 217);
