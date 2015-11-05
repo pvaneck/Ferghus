@@ -45,6 +45,30 @@
 	font-family: Arial, Helvetica, sans-serif;
 	z-index: 5;
 }
+#enchant .text#brEmpty {
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	left: 165px;
+	top: 217px;
+	color: #4A4A4A;
+	font-size: 1.65em;
+	font-weight: bold;
+	text-align: center;
+}
+#enchant .text#brFull {
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	left: 165px;
+	top: 291px;
+	color: #FFFAFD;
+	color: rgba(255, 255, 255, 0.95);
+	font-size: 1.65em;
+	font-weight: bold;
+	text-align: center;
+	display: none;
+}
 #enchant .text#amp {
 
 }
