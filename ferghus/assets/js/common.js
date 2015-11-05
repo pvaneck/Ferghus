@@ -31,7 +31,6 @@ function bgSway() {
 bgSway();
 
 // Audio toggling
-var amb = $("#amb");
 var mute = $("#mute");
 var muted = false;
 
@@ -39,16 +38,24 @@ mute.click(function () {
 	muted = !muted;
 	if (muted) {
 		$(this).css("opacity", "0.5");
-		amb.prop("volume", 0);
+		amb.volume = 0;
 	} else {
 		$(this).css("opacity", "1");
-		amb.prop("volume", amb_volume);
+		amb.volume = amb_volume;
 	}
 });
 
 // On-load logic
 $(document).ready(function () {
-	if (amb) {
-		amb.prop("volume", amb_volume);
-	}
+	amb.volume = amb_volume;
+	amb.play();
+
+	// Gapless audio looping
+	amb.addEventListener("timeupdate", function() {
+	    var buffer = .44;
+	    if(this.currentTime > this.duration - buffer) {
+	        this.currentTime = 0;
+	        this.play();
+	    }
+	}, false);
 });
