@@ -24,16 +24,7 @@
 		var progressBar = $("#progressBar");
         var messagesToPrint = [
             'Welcome to the Magic Laboratory. May the RNG Gods be with you.',
-            'Good luck.',
-            'Foo bar',
-            'Test',
-            'test again',
-            'test again again',
-            'wtf',
-            '1111',
-            '222',
-            '33',
-            '4'
+            'Good luck.'
         ];
 
 		ctrl.calcSuccess = function() {
@@ -156,12 +147,14 @@
 			var roll = randomInt(1, 100);
 			if (roll <= ctrl.success)
 			{
+                addChatMessage('Enchant successful. (' + ctrl.success + '% success)')
 				scope.$apply(function() {
 					ctrl.resultText = "Enchant successful.";
 				});
 			}
 			else
 			{
+                addChatMessage('Enchant failed. (' + ctrl.success + '% success)')
 				scope.$apply(function() {
 					ctrl.resultText = "Enchant failed.";
 				});
@@ -178,7 +171,7 @@
 			TweenMax.to(progressBar, 0, {scaleX:0});
 		}
 
-        ctrl.addChatMessage = function(message) {
+        function addChatMessage(message) {
             ctrl.messageOutArray.push(message);
         }
 
