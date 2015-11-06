@@ -1,15 +1,12 @@
-.text
-{
+.text {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-#bg
-{
+#bg {
 	background-image: url(/assets/img/magic.jpg);
 }
 
-#enchant
-{
+#enchant {
 	width: 639px;
 	height: 441px;
 	background-image: url(/assets/img/enchant_options.png);
@@ -18,8 +15,7 @@
 	z-index: 3;
 }
 
-#enchant div
-{
+#enchant div {
 	/*background-color: rgba(0, 0, 0, 0.5);
 	border: solid 1px;
 	border-color: rgba(255, 255, 255, 0.5);*/
@@ -27,8 +23,7 @@
 	z-index: 4;
 }
 
-#fillContainer
-{
+#fillContainer {
 	width: 310px;
 	height: 148px;
 	left: 49px;
@@ -36,8 +31,7 @@
 	overflow: hidden;
 }
 
-#fill
-{
+#fill {
 	width: 100%;
 	height: 100%;
 	background: linear-gradient(to bottom, #230e37 0%, #6b213a 45%, #be7c3a 100%);
@@ -45,8 +39,7 @@
 	top: 143px;
 }
 
-#fillOverlay
-{
+#fillOverlay {
 	width: 327px;
 	height: 163px;
 	background-image: url(/assets/img/enchant_gradient_overlay.png);
@@ -55,15 +48,13 @@
 	z-index: 5;
 }
 
-#enchant .text
-{
+#enchant .text {
 	font-weight: bold;
 	text-align: center;
 	z-index: 5;
 }
 
-#enchant .text#brEmpty
-{
+#enchant .text#brEmpty {
 	width: 80px;
 	height: 40px;
 	line-height: 40px;
@@ -73,8 +64,7 @@
 	font-size: 1.65em;
 }
 
-#enchant .text#brFull
-{
+#enchant .text#brFull {
 	width: 80px;
 	height: 40px;
 	line-height: 40px;
@@ -85,8 +75,7 @@
 	font-size: 1.65em;
 }
 
-#enchant .text#magic
-{
+#enchant .text#magic {
 	width: 366px;
 	height: 24px;
 	left: 20px;
@@ -95,8 +84,7 @@
 	font-size: 0.92em;
 }
 
-#enchant .text#ampsLeft
-{
+#enchant .text#ampsLeft {
 	width: 24px;
 	height: 10px;
 	line-height: 10px;
@@ -106,38 +94,32 @@
 	font-size: 0.65em;
 }
 
-#enchant .elixirs
-{
+#enchant .elixirs {
 	width: 170px;
 	height: 45px;	
 	left: 429px;
 }
 
-#magicElixir
-{
+#magicElixir {
 	top: 79px;
 }
 
-#blessedMagicElixir
-{
+#blessedMagicElixir {
 	top: 133px;
 }
 
-#magicElixirOfLife
-{
+#magicElixirOfLife {
 	top: 187px;
 }
 
-#maxSuccess
-{
+#maxSuccess {
 	width: 75px;
 	height: 30px;
 	left: 524px;
 	top: 340px;	
 }
 
-#maxSuccessInput
-{
+#maxSuccessInput {
 	background-color: rgba(19, 28, 33, 0.75);
 	border-top: 1px solid #000;
 	border-bottom: 1px solid #000;
@@ -152,8 +134,7 @@
 	text-align: right;
 }
 
-#maxSuccessAddon
-{
+#maxSuccessAddon {
 	background-color: rgba(19, 28, 33, 0.75);
 	border: 1px solid #000;
 	border-radius: 0 6px 6px 0;
@@ -165,8 +146,7 @@
 	text-align: left;
 }
 
-#begin
-{
+#begin {
 	width: 120px;
 	height: 30px;
 	left: 81px;
@@ -174,18 +154,15 @@
 	border-radius: 4px;
 }
 
-#begin:hover
-{
+#begin:hover {
 	background-image: url(/assets/img/enchant_begin_hover.jpg);
 }
 
-#begin:active, #begin.active
-{
+#begin:active, #begin.active {
 	background-image: url(/assets/img/enchant_begin_active.jpg);
 }
 
-#cancel
-{
+#cancel {
 	width: 120px;
 	height: 30px;
 	left: 210px;
@@ -193,18 +170,15 @@
 	border-radius: 4px;
 }
 
-#cancel:hover
-{
+#cancel:hover {
 	background-image: url(/assets/img/enchant_cancel_hover.jpg);
 }
 
-#cancel:active, #cancel.active
-{
+#cancel:active, #cancel.active {
 	background-image: url(/assets/img/enchant_cancel_active.jpg);
 }
 
-#amplify
-{
+#amplify {
 	width: 120px;
 	height: 30px;
 	left: 455px;
@@ -212,52 +186,43 @@
 	border-radius: 4px;
 }
 
-.amplify-lit
-{
+.amplify-lit {
     background-image: url(/assets/img/amplify_magic.jpg);
 }
 
-.amplify-lit:hover
-{
+.amplify-lit:hover {
     background-image: url(/assets/img/amplify_magic_hover.jpg);
 }
 
-.amplify-lit:active, .amplify-lit.active
-{
+.amplify-lit:active, .amplify-lit.active {
     background-image: url(/assets/img/amplify_magic_active.jpg);
 }
 
-.amplify-unlit
-{
+.amplify-unlit {
     background-image: url(/assets/img/amplify_magic_unlit.jpg);
     cursor: url(/assets/img/cursor/Hero_Normal.cur), auto;
 }
 
-.elixir
-{
+.elixir {
     width: 100%;
     height: 100%;
 }
 
-.elixir:hover
-{
+.elixir:hover {
     box-shadow: inset 0px 0px 5px #9c8279;
 }
 
-.selected-elixir
-{
+.selected-elixir {
     box-shadow: inset 0px 0px 10px #b09389;
 }
 
-.popup#progress
-{
+.popup#progress {
 	width: 361px;
 	height: 416px;
 	background-image: url(/assets/img/enchant_wheel_of_death.png);
 }
 
-#progressBar
-{
+#progressBar {
 	width: 192px;
 	height: 6px;
 	background-image: url(/assets/img/progress-filled.jpg);
@@ -268,8 +233,7 @@
 	transform: scaleX(0);
 }
 
-.popup#result
-{
+.popup#result {
 	width: 200px;
 	height: 120px;
 	background-color: rgba(19, 28, 33, 0.75);
@@ -281,8 +245,7 @@
 		0 0 3px #000;
 }
 
-#resultText
-{
+#resultText {
 	width: 100%;
 	height: 100%;
 	line-height: 120px;
@@ -292,8 +255,7 @@
 	text-align: center;
 }
 
-#brynn
-{
+#brynn {
 	width: 426px;
 	height: 512px;
 	background-image: url(/assets/img/brynn.png);

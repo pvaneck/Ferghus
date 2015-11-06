@@ -1,10 +1,8 @@
 /** Angular App Code */
-(function()
-{
+(function() {
 	var app = angular.module('brynn', [ ]);
 
-	app.controller('EnchantController', ['$scope', '$timeout', function($scope, $timeout)
-	{
+	app.controller('EnchantController', ['$scope', '$timeout', function($scope, $timeout) {
 		var scope = $scope;
 		var timeout = $timeout;
 		var ctrl = this;
@@ -26,60 +24,50 @@
 		var brValues = {empty:100, full:0};
 		var progressBar = $("#progressBar");
 
-		scope.$watch("ctrl.successEnd", function()
-		{
+		scope.$watch("ctrl.successEnd", function() {
 			if(successTimer)
 				timeout.cancel(successTimer);
 			successTimer = timeout(function() { ctrl.updateSuccess(); }, 1000);
 		});
 
-		ctrl.calcSuccess = function()
-		{
+		ctrl.calcSuccess = function() {
 			if (ctrl.magic <= 100)
 				ctrl.success = Math.floor(ctrl.successStart + (ctrl.successEnd - ctrl.successStart) * (ctrl.magic / 100.0));
 			else
 				ctrl.success = ctrl.successStart;
 		}
 
-		ctrl.updateSuccess = function()
-		{
+		ctrl.updateSuccess = function() {
 			alert();
 			ctrl.successEnd = Math.min(Math.max(ctrl.successEnd, 25), 100);
 			ctrl.calcSuccess();
 		}
 
-		ctrl.updateBrText = function()
-		{
-			scope.$apply(function()
-			{
+		ctrl.updateBrText = function() {
+			scope.$apply(function() {
 				ctrl.brEmpty = Math.floor(brValues.empty);
 				ctrl.brFull = Math.ceil(brValues.full);
 			});
 		}
 
-		ctrl.addMagic = function(br)
-		{
+		ctrl.addMagic = function(br) {
 			ctrl.magic = ctrl.magic + br;
 			ctrl.calcSuccess();
-			TweenMax.to(fill, 0.5,
-			{
+			TweenMax.to(fill, 0.5, {
 				top:Math.max(143 - 143 * (ctrl.magic / 100), 0),
 				ease:Power4.easeOut
 			});
-			TweenMax.to(brEmptyText, 0.5,
-			{
+			TweenMax.to(brEmptyText, 0.5, {
 				top:Math.max(217 - 74 * (ctrl.magic / 100), 0),
 				ease:Power4.easeOut
 			});
-			TweenMax.to(brFullText, 0.5,
-			{
+			TweenMax.to(brFullText, 0.5, {
 				top:Math.max(291 - 74 * Math.min(ctrl.magic / 100, 1), 0),
 				ease:Power4.easeOut
 			});
 			var emptyTarget = 100 - ctrl.magic;
 			var fullTarget = ctrl.magic;
-			TweenMax.to(brValues, 0.5,
-			{
+			TweenMax.to(brValues, 0.5, {
 				empty:emptyTarget,
 				full:fullTarget,
 				ease:Power4.easeOut,
@@ -87,15 +75,13 @@
 			});
 		}
 
-		ctrl.addElixir = function(elixir)
-		{
+		ctrl.addElixir = function(elixir) {
 			if (ctrl.ampsLeft <= 0)
 				return;
 			
 			var brMin;
 			var brMax;
-			switch (elixir)
-			{
+			switch (elixir) {
 				case 1:
 					brMin = 1;
 					brMax = 10;
@@ -119,8 +105,7 @@
 			ctrl.addMagic(randomInt(brMin, brMax));
 		};
 
-		ctrl.cancel = function()
-		{
+		ctrl.cancel = function() {
 			if (!ctrl.magic)
 				return;
 			TweenMax.killTweensOf(fill);
@@ -140,10 +125,8 @@
 			ctrl.selectedElixir = null;
 		}
 
-		ctrl.begin = function()
-		{
-			if (!muted)
-			{
+		ctrl.begin = function() {
+			if (!muted) {
 				audioEnhance.volume = 0.7;
 				audioEnhance.currentTime = 0;
 				audioEnhance.play();
@@ -156,32 +139,25 @@
 				autoClose: 1850,
 				onClose: ctrl.result
 			});
-			TweenMax.to(progressBar, 2.1,
-			{
+			TweenMax.to(progressBar, 2.1, {
 				scaleX:1,
 				ease:Power0.easeOut
 			});
 		}
 
-		ctrl.result = function()
-		{
+		ctrl.result = function() {
 			var roll = randomInt(1, 100);
-			if (roll <= ctrl.success)
-			{
-				scope.$apply(function()
-				{
+			if (roll <= ctrl.success) {
+				scope.$apply(function() {
 					ctrl.resultText = "Enchant successful.";
 				});
 			}
-			else
-			{
-				scope.$apply(function()
-				{
+			else {
+				scope.$apply(function() {
 					ctrl.resultText = "Enchant failed.";
 				});
 			}
-			scope.$apply(function()
-			{
+			scope.$apply(function() {
 				ctrl.cancel();
 			});
 			$("#result").bPopup({
