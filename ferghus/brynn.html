@@ -54,7 +54,7 @@
                     <div class="input-group input-group-sm" id="maxSuccess">
                         <input type="text" class="form-control canType"
                                 id="maxSuccessInput" placeholder="-" aria-describedby="maxSuccessAddon"
-                                ng-model="enchant.successEnd">
+                                ng-model="enchant.successEnd" ng-change="enchant.updateSuccess()">
                         <span class="input-group-addon" id="maxSuccessAddon">%</span>
                     </div>
                     <div class="canClick" id="begin" ng-click="enchant.begin()"></div>

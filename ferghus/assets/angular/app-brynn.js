@@ -18,7 +18,7 @@
 		ctrl.resultText = "";
         ctrl.messageOutArray = [];
 
-		var successTimer = false;
+		var successTimer = null;
 		var fill = $("#fill");
 		var brEmptyText = $("#brEmpty");
 		var brFullText = $("#brFull");
@@ -29,12 +29,6 @@
             'Good luck.'
         ];
 
-		scope.$watch("ctrl.successEnd", function() {
-			if(successTimer)
-				timeout.cancel(successTimer);
-			successTimer = timeout(function() { ctrl.updateSuccess(); }, 1000);
-		});
-
 		ctrl.calcSuccess = function() {
 			if (ctrl.magic <= 100)
 				ctrl.success = Math.floor(ctrl.successStart + (ctrl.successEnd - ctrl.successStart) * (ctrl.magic / 100.0));
@@ -43,9 +37,12 @@
 		}
 
 		ctrl.updateSuccess = function() {
-			alert();
-			ctrl.successEnd = Math.min(Math.max(ctrl.successEnd, 25), 100);
-			ctrl.calcSuccess();
+			if(successTimer)
+				timeout.cancel(successTimer);
+			successTimer = timeout(function() {
+				ctrl.successEnd = Math.min(Math.max(ctrl.successEnd, 25), 100);
+				ctrl.calcSuccess();
+			}, 1000);
 		}
 
 		ctrl.updateBrText = function() {
