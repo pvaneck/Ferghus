@@ -120,6 +120,7 @@ h3 {
 #chatbox .message {
     width: 320px;
     float: left;
+    margin-right: 15px;
     -webkit-text-stroke-width: .5px;
     -webkit-text-stroke-color: #5e8528;
     font-weight: 600;
