@@ -1,2 +1,2 @@
-audioAmbience = setAudio("assets/sound/amb_magic_laboratory");
+audioAmbience = setAudio('amb_magic_laboratory');
 var ambienceVolume = 1;

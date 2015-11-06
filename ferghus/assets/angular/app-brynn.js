@@ -15,15 +15,15 @@
 		ctrl.selectedElixir = null;
 		ctrl.brEmpty = 100;
 		ctrl.brFull = 0;
-		ctrl.resultText = "";
+		ctrl.resultText = '';
         ctrl.messageOutArray = [];
 
 		var successTimer = null;
-		var fill = $("#fill");
-		var brEmptyText = $("#brEmpty");
-		var brFullText = $("#brFull");
+		var fill = $('#fill');
+		var brEmptyText = $('#brEmpty');
+		var brFullText = $('#brFull');
 		var brValues = {empty:100, full:0};
-		var progressBar = $("#progressBar");
+		var progressBar = $('#progressBar');
         var messagesToPrint = [
             'Welcome to the Magic Laboratory. May the RNG Gods be with you.',
             'Good luck.'
@@ -40,8 +40,12 @@
 			if(successTimer)
 				timeout.cancel(successTimer);
 			successTimer = timeout(function() {
-				ctrl.successEnd = Math.min(Math.max(ctrl.successEnd, 25), 100);
+				if (isNaN(ctrl.successEnd))
+					ctrl.successEnd = 25;
+				else
+					ctrl.successEnd = Math.min(Math.max(Math.floor(ctrl.successEnd), 25), 100);
 				ctrl.calcSuccess();
+				$('#maxSuccessInput').blur();
 			}, 1000);
 		}
 
@@ -108,6 +112,7 @@
 		};
 
 		ctrl.cancel = function() {
+			ctrl.selectedElixir = null;
 			if (!ctrl.magic)
 				return;
 			TweenMax.killTweensOf(fill);
@@ -117,14 +122,13 @@
 			ctrl.magic = 0;
 			ctrl.ampsLeft = 5;
 			ctrl.calcSuccess();
-			fill.css("top", 143);
-			brEmptyText.css("top", 217);
-			brFullText.css("top", 291);
+			fill.css('top', 143);
+			brEmptyText.css('top', 217);
+			brFullText.css('top', 291);
 			ctrl.brEmpty = 100;
 			ctrl.brFull = 0;
 			brValues.empty = 100;
 			brValues.full = 0;
-			ctrl.selectedElixir = null;
 		}
 
 		ctrl.begin = function() {
@@ -133,8 +137,8 @@
 				audioEnhance.currentTime = 0;
 				audioEnhance.play();
 			}
-			$("#progress").bPopup({
-				speed: "fast",
+			$('#progress').bPopup({
+				speed: 'fast',
 				followSpeed: 250,
 				opacity: 0.3,
 				modalClose: false,
@@ -150,23 +154,23 @@
 		ctrl.result = function() {
 			var roll = randomInt(1, 100);
 			if (roll <= ctrl.success) {
-                addChatMessage('Enchant successful. (' + ctrl.success + '% success)')
+                addChatMessage('Enchant successful. (' + ctrl.success + '% success, roll: ' + roll + ')')
 				scope.$apply(function() {
-					ctrl.resultText = "Enchant successful.";
+					ctrl.resultText = 'Enchant successful.';
 				});
 			}
 			else {
-                addChatMessage('Enchant failed. (' + ctrl.success + '% success)')
+                addChatMessage('Enchant failed. (' + ctrl.success + '% success, roll: ' + roll + ')')
 				scope.$apply(function() {
-					ctrl.resultText = "Enchant failed.";
+					ctrl.resultText = 'Enchant failed.';
 				});
 			}
 			scope.$apply(function() {
 				ctrl.cancel();
 			});
-			$("#result").bPopup({
-				speed: "slow",
-				followSpeed: "fast",
+			$('#result').bPopup({
+				speed: 'slow',
+				followSpeed: 'fast',
 				modal: false,
 				autoClose: 2000
 			});
@@ -191,7 +195,7 @@
     app.directive('scrollBottom', function () {
         return {
             scope: {
-                scrollBottom: "="
+                scrollBottom: '='
             },
             link: function (scope, element) {
                 scope.$watchCollection('scrollBottom', function (newValue) {
