@@ -1,14 +1,25 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 body {
 	padding-left: 24px;
 	padding-right: 24px;
 	cursor: url(/assets/img/cursor/Hero_Normal.cur), auto;
 }
+
 a, #mute, .canClick {
 	cursor: url(/assets/img/cursor/Hero_press.cur) 7 0, auto;
 }
+
+.canType {
+	cursor: url(/assets/img/cursor/Hero_ibeam.cur) 2 8, auto;
+}
+
 h2 {
 	color: #eee;
 }
+
 h3 {
 	color: #aaa;
 	margin-top: 12px;
@@ -24,6 +35,7 @@ h3 {
 	left: 0px;
 	z-index: -1;
 }
+
 @media screen and (max-width: 1280px) {
 	#bg {
 		left: 50%;

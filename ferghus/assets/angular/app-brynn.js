@@ -1,9 +1,12 @@
 /** Angular App Code */
-(function() {
+(function()
+{
 	var app = angular.module('brynn', [ ]);
 
-	app.controller('EnchantController', ['$scope', function($scope) {
+	app.controller('EnchantController', ['$scope', '$timeout', function($scope, $timeout)
+	{
 		var scope = $scope;
+		var timeout = $timeout;
 		var ctrl = this;
 
 		ctrl.magic = 0;
@@ -16,48 +19,67 @@
 		ctrl.brFull = 0;
 		ctrl.resultText = "";
 
+		var successTimer = false;
 		var fill = $("#fill");
 		var brEmptyText = $("#brEmpty");
 		var brFullText = $("#brFull");
 		var brValues = {empty:100, full:0};
 		var progressBar = $("#progressBar");
 
-		ctrl.calcSuccess = function() {
+		scope.$watch("ctrl.successEnd", function()
+		{
+			if(successTimer)
+				timeout.cancel(successTimer);
+			successTimer = timeout(function() { ctrl.updateSuccess(); }, 1000);
+		});
+
+		ctrl.calcSuccess = function()
+		{
 			if (ctrl.magic <= 100)
 				ctrl.success = Math.floor(ctrl.successStart + (ctrl.successEnd - ctrl.successStart) * (ctrl.magic / 100.0));
 			else
 				ctrl.success = ctrl.successStart;
 		}
 
-		ctrl.updateBrText = function() {
-			if (brValues.empty < 41)
-				brEmptyText.css("display", "none");
-			if (brValues.full >= 41)
-				brFullText.css("display", "inherit");
-			scope.$apply(function() {
+		ctrl.updateSuccess = function()
+		{
+			alert();
+			ctrl.successEnd = Math.min(Math.max(ctrl.successEnd, 25), 100);
+			ctrl.calcSuccess();
+		}
+
+		ctrl.updateBrText = function()
+		{
+			scope.$apply(function()
+			{
 				ctrl.brEmpty = Math.floor(brValues.empty);
 				ctrl.brFull = Math.ceil(brValues.full);
 			});
 		}
 
-		ctrl.addMagic = function(br) {
+		ctrl.addMagic = function(br)
+		{
 			ctrl.magic = ctrl.magic + br;
 			ctrl.calcSuccess();
-			TweenMax.to(fill, 0.5, {
+			TweenMax.to(fill, 0.5,
+			{
 				top:Math.max(143 - 143 * (ctrl.magic / 100), 0),
 				ease:Power4.easeOut
 			});
-			TweenMax.to(brEmptyText, 0.5, {
+			TweenMax.to(brEmptyText, 0.5,
+			{
 				top:Math.max(217 - 74 * (ctrl.magic / 100), 0),
 				ease:Power4.easeOut
 			});
-			TweenMax.to(brFullText, 0.5, {
+			TweenMax.to(brFullText, 0.5,
+			{
 				top:Math.max(291 - 74 * Math.min(ctrl.magic / 100, 1), 0),
 				ease:Power4.easeOut
 			});
 			var emptyTarget = 100 - ctrl.magic;
 			var fullTarget = ctrl.magic;
-			TweenMax.to(brValues, 0.5, {
+			TweenMax.to(brValues, 0.5,
+			{
 				empty:emptyTarget,
 				full:fullTarget,
 				ease:Power4.easeOut,
@@ -65,10 +87,10 @@
 			});
 		}
 
-		ctrl.addElixir = function(elixir) {
-			if (ctrl.ampsLeft <= 0) {
+		ctrl.addElixir = function(elixir)
+		{
+			if (ctrl.ampsLeft <= 0)
 				return;
-		    }
 			
 			var brMin;
 			var brMax;
@@ -97,7 +119,10 @@
 			ctrl.addMagic(randomInt(brMin, brMax));
 		};
 
-		ctrl.cancel = function() {
+		ctrl.cancel = function()
+		{
+			if (!ctrl.magic)
+				return;
 			TweenMax.killTweensOf(fill);
 			TweenMax.killTweensOf(brEmptyText);
 			TweenMax.killTweensOf(brFullText);
@@ -108,8 +133,6 @@
 			fill.css("top", 143);
 			brEmptyText.css("top", 217);
 			brFullText.css("top", 291);
-			brEmptyText.css("display", "inherit");
-			brFullText.css("display", "none");
 			ctrl.brEmpty = 100;
 			ctrl.brFull = 0;
 			brValues.empty = 100;
@@ -117,7 +140,8 @@
 			ctrl.selectedElixir = null;
 		}
 
-		ctrl.begin = function() {
+		ctrl.begin = function()
+		{
 			if (!muted)
 			{
 				audioEnhance.volume = 0.7;
@@ -132,27 +156,32 @@
 				autoClose: 1850,
 				onClose: ctrl.result
 			});
-			TweenMax.to(progressBar, 2.1, {
+			TweenMax.to(progressBar, 2.1,
+			{
 				scaleX:1,
 				ease:Power0.easeOut
 			});
 		}
 
-		ctrl.result = function() {
+		ctrl.result = function()
+		{
 			var roll = randomInt(1, 100);
 			if (roll <= ctrl.success)
 			{
-				scope.$apply(function() {
+				scope.$apply(function()
+				{
 					ctrl.resultText = "Enchant successful.";
 				});
 			}
 			else
 			{
-				scope.$apply(function() {
+				scope.$apply(function()
+				{
 					ctrl.resultText = "Enchant failed.";
 				});
 			}
-			scope.$apply(function() {
+			scope.$apply(function()
+			{
 				ctrl.cancel();
 			});
 			$("#result").bPopup({
