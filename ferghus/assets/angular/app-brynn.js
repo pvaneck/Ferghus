@@ -179,7 +179,7 @@
             angular.forEach(messagesToPrint, function(message, index) {
                 $timeout(function() {
                     ctrl.messageOutArray.push(message);
-                }, index * 1000);
+                }, index * 1500);
             });
         }
 
