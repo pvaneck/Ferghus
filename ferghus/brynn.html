@@ -68,6 +68,16 @@
                 <div id="mute">
                     <img id="muteIcon" src="assets/img/headphones.png" alt="Mute">
                 </div>
+                <div id="chatboxContainer">
+                    <div id="chatbox" scroll-bottom="enchant.messageOutArray">
+                        <div ng-repeat="message in enchant.messageOutArray track by $index">
+                            <div class="row">
+                                    <div class="type"><span class='system'>SYSTEM</span></div>
+                                    <div class="message">{{message}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

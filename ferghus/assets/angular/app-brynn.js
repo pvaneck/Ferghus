@@ -2,7 +2,7 @@
 (function() {
 	var app = angular.module('brynn', [ ]);
 
-	app.controller('EnchantController', ['$scope', function($scope) {
+	app.controller('EnchantController', ['$scope', '$timeout', function($scope, $timeout) {
 		var scope = $scope;
 		var ctrl = this;
 
@@ -15,12 +15,26 @@
 		ctrl.brEmpty = 100;
 		ctrl.brFull = 0;
 		ctrl.resultText = "";
+        ctrl.messageOutArray = [];
 
 		var fill = $("#fill");
 		var brEmptyText = $("#brEmpty");
 		var brFullText = $("#brFull");
 		var brValues = {empty:100, full:0};
 		var progressBar = $("#progressBar");
+        var messagesToPrint = [
+            'Welcome to the Magic Laboratory. May the RNG Gods be with you.',
+            'Good luck.',
+            'Foo bar',
+            'Test',
+            'test again',
+            'test again again',
+            'wtf',
+            '1111',
+            '222',
+            '33',
+            '4'
+        ];
 
 		ctrl.calcSuccess = function() {
 			if (ctrl.magic <= 100)
@@ -69,7 +83,7 @@
 			if (ctrl.ampsLeft <= 0) {
 				return;
 		    }
-			
+
 			var brMin;
 			var brMax;
 			switch (elixir)
@@ -163,5 +177,34 @@
 			});
 			TweenMax.to(progressBar, 0, {scaleX:0});
 		}
-	}]);
+
+        ctrl.addChatMessage = function(message) {
+            ctrl.messageOutArray.push(message);
+        }
+
+        function printMessages() {
+            angular.forEach(messagesToPrint, function(message, index) {
+                $timeout(function() {
+                    ctrl.messageOutArray.push(message);
+                }, index * 1000);
+            });
+        }
+
+        printMessages();
+    }]);
+
+    app.directive('scrollBottom', function () {
+        return {
+            scope: {
+                scrollBottom: "="
+            },
+            link: function (scope, element) {
+                scope.$watchCollection('scrollBottom', function (newValue) {
+                    if (newValue) {
+                        $(element).scrollTop($(element)[0].scrollHeight);
+                    }
+                });
+            }
+        }
+    });
 })();

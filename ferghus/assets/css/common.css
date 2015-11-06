@@ -3,15 +3,22 @@ body {
 	padding-right: 24px;
 	cursor: url(/assets/img/cursor/Hero_Normal.cur), auto;
 }
+
 a, #mute, .canClick {
 	cursor: url(/assets/img/cursor/Hero_press.cur) 7 0, auto;
 }
+
 h2 {
 	color: #eee;
 }
+
 h3 {
 	color: #aaa;
 	margin-top: 12px;
+}
+
+.text {
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 #bg {
@@ -24,6 +31,7 @@ h3 {
 	left: 0px;
 	z-index: -1;
 }
+
 @media screen and (max-width: 1280px) {
 	#bg {
 		left: 50%;
@@ -77,4 +85,66 @@ h3 {
 
 .popup {
 	display: none;
+}
+#chatboxContainer {
+    padding: 40px 60px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+}
+#chatbox {
+    font-family: goudysans_md_btmedium;
+    box-sizing: border-box;
+    line-height: 130%;
+    overflow: hidden;
+    max-height: 200px;
+}
+
+#chatbox .row {
+    padding-bottom: 8px;
+}
+
+#chatbox .type {
+    width: 60px;
+    float: left;
+    margin-right: 10px;
+    margin-left: 25px;
+    -webkit-transform:scale(1.25,1);
+    -moz-transform:scale(1.25,1);
+    -ms-transform:scale(1.25,1);
+    -o-transform:scale(1.25,1);
+    transform:scale(1.25,1);
+}
+
+#chatbox .message {
+    width: 320px;
+    float: left;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: #5e8528;
+    font-weight: 600;
+    color: #a4cb7c;
+    text-shadow: 0 1px 2px #000,0 -1px 2px #000;
+}
+
+#chatbox .system {
+    margin-right: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    color: #111;
+    border: 1px solid #3f4426;
+    background: #5e8528;
+    padding: 2px 5px;
+    border-radius: 30px;
+}
+
+@font-face {
+    font-family: 'goudysans_md_btmedium';
+    src: url('/assets/fonts/goudysans/goudsanm-webfont.eot');
+    src: url('/assets/fonts/goudysans/goudsanm-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/goudysans/goudsanm-webfont.woff') format('woff'),
+         url('/assets/fonts/goudysans/goudsanm-webfont.ttf') format('truetype'),
+         url('/assets/fonts/goudysans/goudsanm-webfont.svg#goudysans_md_btmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
