@@ -4,6 +4,7 @@
 
 	app.controller('EnchantController', ['$scope', '$timeout', function($scope, $timeout) {
 		var scope = $scope;
+		var timeout = $timeout;
 		var ctrl = this;
 
 		ctrl.magic = 0;
@@ -17,6 +18,7 @@
 		ctrl.resultText = "";
         ctrl.messageOutArray = [];
 
+		var successTimer = false;
 		var fill = $("#fill");
 		var brEmptyText = $("#brEmpty");
 		var brFullText = $("#brFull");
@@ -27,6 +29,12 @@
             'Good luck.'
         ];
 
+		scope.$watch("ctrl.successEnd", function() {
+			if(successTimer)
+				timeout.cancel(successTimer);
+			successTimer = timeout(function() { ctrl.updateSuccess(); }, 1000);
+		});
+
 		ctrl.calcSuccess = function() {
 			if (ctrl.magic <= 100)
 				ctrl.success = Math.floor(ctrl.successStart + (ctrl.successEnd - ctrl.successStart) * (ctrl.magic / 100.0));
@@ -34,11 +42,13 @@
 				ctrl.success = ctrl.successStart;
 		}
 
+		ctrl.updateSuccess = function() {
+			alert();
+			ctrl.successEnd = Math.min(Math.max(ctrl.successEnd, 25), 100);
+			ctrl.calcSuccess();
+		}
+
 		ctrl.updateBrText = function() {
-			if (brValues.empty < 41)
-				brEmptyText.css("display", "none");
-			if (brValues.full >= 41)
-				brFullText.css("display", "inherit");
 			scope.$apply(function() {
 				ctrl.brEmpty = Math.floor(brValues.empty);
 				ctrl.brFull = Math.ceil(brValues.full);
@@ -71,14 +81,12 @@
 		}
 
 		ctrl.addElixir = function(elixir) {
-			if (ctrl.ampsLeft <= 0) {
+			if (ctrl.ampsLeft <= 0)
 				return;
-		    }
 
 			var brMin;
 			var brMax;
-			switch (elixir)
-			{
+			switch (elixir) {
 				case 1:
 					brMin = 1;
 					brMax = 10;
@@ -103,6 +111,8 @@
 		};
 
 		ctrl.cancel = function() {
+			if (!ctrl.magic)
+				return;
 			TweenMax.killTweensOf(fill);
 			TweenMax.killTweensOf(brEmptyText);
 			TweenMax.killTweensOf(brFullText);
@@ -113,8 +123,6 @@
 			fill.css("top", 143);
 			brEmptyText.css("top", 217);
 			brFullText.css("top", 291);
-			brEmptyText.css("display", "inherit");
-			brFullText.css("display", "none");
 			ctrl.brEmpty = 100;
 			ctrl.brFull = 0;
 			brValues.empty = 100;
@@ -123,8 +131,7 @@
 		}
 
 		ctrl.begin = function() {
-			if (!muted)
-			{
+			if (!muted) {
 				audioEnhance.volume = 0.7;
 				audioEnhance.currentTime = 0;
 				audioEnhance.play();
@@ -145,15 +152,13 @@
 
 		ctrl.result = function() {
 			var roll = randomInt(1, 100);
-			if (roll <= ctrl.success)
-			{
+			if (roll <= ctrl.success) {
                 addChatMessage('Enchant successful. (' + ctrl.success + '% success)')
 				scope.$apply(function() {
 					ctrl.resultText = "Enchant successful.";
 				});
 			}
-			else
-			{
+			else {
                 addChatMessage('Enchant failed. (' + ctrl.success + '% success)')
 				scope.$apply(function() {
 					ctrl.resultText = "Enchant failed.";

@@ -19,7 +19,7 @@ $("body").mouseup(function(e) {
 });
 
 // Prevent text selection
-$("body").mousedown(function(e) {
+$('body *').not(':has(.canType)').not('.canType').mousedown(function(e) {
 	e.preventDefault();
 });
 

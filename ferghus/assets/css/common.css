@@ -1,3 +1,18 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+@font-face {
+    font-family: 'goudysans_md_btmedium';
+    src: url('/assets/fonts/goudysans/goudsanm-webfont.eot');
+    src: url('/assets/fonts/goudysans/goudsanm-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/goudysans/goudsanm-webfont.woff') format('woff'),
+         url('/assets/fonts/goudysans/goudsanm-webfont.ttf') format('truetype'),
+         url('/assets/fonts/goudysans/goudsanm-webfont.svg#goudysans_md_btmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
 	padding-left: 24px;
 	padding-right: 24px;
@@ -8,6 +23,14 @@ a, #mute, .canClick {
 	cursor: url(/assets/img/cursor/Hero_press.cur) 7 0, auto;
 }
 
+.canType {
+	cursor: url(/assets/img/cursor/Hero_ibeam.cur) 2 8, auto;
+}
+
+.text {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 h2 {
 	color: #eee;
 }
@@ -15,10 +38,6 @@ h2 {
 h3 {
 	color: #aaa;
 	margin-top: 12px;
-}
-
-.text {
-	font-family: Arial, Helvetica, sans-serif;
 }
 
 #bg {
@@ -86,6 +105,7 @@ h3 {
 .popup {
 	display: none;
 }
+
 #chatboxContainer {
     padding: 40px 60px;
     position: absolute;
@@ -93,6 +113,7 @@ h3 {
     bottom: 0;
     z-index: 3;
 }
+
 #chatbox {
     font-family: goudysans_md_btmedium;
     box-sizing: border-box;
@@ -135,15 +156,4 @@ h3 {
     background: #5e8528;
     padding: 2px 5px;
     border-radius: 30px;
-}
-
-@font-face {
-    font-family: 'goudysans_md_btmedium';
-    src: url('/assets/fonts/goudysans/goudsanm-webfont.eot');
-    src: url('/assets/fonts/goudysans/goudsanm-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/goudysans/goudsanm-webfont.woff') format('woff'),
-         url('/assets/fonts/goudysans/goudsanm-webfont.ttf') format('truetype'),
-         url('/assets/fonts/goudysans/goudsanm-webfont.svg#goudysans_md_btmedium') format('svg');
-    font-weight: normal;
-    font-style: normal;
 }
