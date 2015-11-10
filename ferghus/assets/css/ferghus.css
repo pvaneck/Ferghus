@@ -30,7 +30,7 @@
 #item {
 	width: 48px;
 	height: 48px;
-	line-height: 48px;
+	line-height: 47px;
 	padding: 0;
 	margin: 2px;
 	background-color: rgba(19, 28, 33, 0.75);
@@ -41,6 +41,7 @@
 		inset 0 0 10px rgba(215, 235, 255, 0.15),
 		0 0 3px #000;
 	color: #cacaca;
+	font-size: 1.05em;
 	text-align: center;
 }
 

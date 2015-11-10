@@ -19,6 +19,10 @@ body {
 	cursor: url(/assets/img/cursor/Hero_Normal.cur), auto;
 }
 
+.b-modal {
+    cursor: url(/assets/img/cursor/Hero_Normal.cur), auto !important;
+}
+
 a, #mute, .canClick {
 	cursor: url(/assets/img/cursor/Hero_press.cur) 7 0, auto;
 }
