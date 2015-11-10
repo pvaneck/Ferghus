@@ -21,9 +21,9 @@
             <div class="row">
                 <div id="enhance">
                     <div class="canClick" id="enhanceButton"
-                         ng-class="{'enhanceButton-unlit ': 1, 
-                                    'enhanceButton-lit ': 0}"
-                         ng-click="">
+                         ng-class="{'enhanceButton-unlit ': enhance.selectedItem === null, 
+                                    'enhanceButton-lit ': enhance.selectedItem !== null}"
+                         ng-click="enhance.begin()">
                     </div>
                     <div class="canClick" id="btnItem" ng-click="enhance.getItem()">
                         <div ng-hide="enhance.selectedItem === null" ng-cloak>
@@ -63,6 +63,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="popup" id="progress">
+                    <div id="progressBar"></div>
                 </div>
             </div>
         </div>

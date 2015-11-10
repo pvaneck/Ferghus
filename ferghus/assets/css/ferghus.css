@@ -98,6 +98,7 @@
 
 .enhanceButton-unlit {
 	background-image: url(/assets/img/enhance_unlit.jpg);
+    cursor: url(/assets/img/cursor/Hero_Normal.cur), auto 
 }
 
 .enhanceButton-lit:hover {
@@ -106,4 +107,21 @@
 
 .enhanceButton-lit:active, .amplify-lit.active {
 	box-shadow: inset 0px 0px 10px #9C9B9B;
+}
+
+.popup#progress {
+	width: 339px;
+	height: 389px;
+	background-image: url(/assets/img/wheel_of_death.png);
+}
+
+#progressBar {
+	width: 192px;
+	height: 6px;
+	background-image: url(/assets/img/progress-filled.jpg);
+	position: absolute;
+	left: 74px;
+	top: 312px;
+	transform-origin: left 3px;
+	transform: scaleX(0);
 }
