@@ -54,6 +54,9 @@
 		}
 
         ctrl.begin = function() {
+        	if (ctrl.selectedItem === null || ctrl.selectedItem >= 15) {
+                return;
+            }
             if (!muted) {
                 audioEnhance.volume = 0.7;
                 audioEnhance.currentTime = 0;
@@ -74,23 +77,19 @@
         }
 
         ctrl.doEnhance = function() {
-            if (ctrl.selectedItem === null || ctrl.selectItem >= 15) {
-                return;
-            }
             var roll = randomFloat(0, 100);
-            roll = Math.round(roll*10000)/10000
+            roll = Math.round(roll*10000)/10000;
             var prob = enhanceProbabilities[ctrl.selectedItem];
             if (roll < prob) {
-                addChatMessage('Enhance successful. (' + prob + '% success, roll: ' + roll + ')');
-                ctrl.selectedItem  += 1
+                addChatMessage('Enhance successful. (' + prob.toFixed(0) + '% success, roll: ' + roll + ')');
+                ctrl.selectedItem++;
             }
             else {
-                addChatMessage('Enhance failed. (' + prob + '% success, roll: ' + roll + ')');
+                addChatMessage('Enhance failed. (' + prob.toFixed(0) + '% success, roll: ' + roll + ')');
                 ctrl.selectedItem = null;
             }
             scope.$apply();
             TweenMax.to(progressBar, 0, {scaleX:0});
-
         }
         
 	}]);

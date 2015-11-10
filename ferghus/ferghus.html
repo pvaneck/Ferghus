@@ -20,20 +20,24 @@
         <div class="container-fluid"  ng-controller="EnhanceController as enhance">
             <div class="row">
                 <div id="enhance">
-                    <div class="canClick" id="enhanceButton"
-                         ng-class="{'enhanceButton-unlit ': enhance.selectedItem === null, 
-                                    'enhanceButton-lit ': enhance.selectedItem !== null}"
-                         ng-click="enhance.begin()">
-                    </div>
                     <div class="canClick" id="btnItem" ng-click="enhance.getItem()">
                         <div ng-hide="enhance.selectedItem === null" ng-cloak>
                             +{{enhance.selectedItem}}
                         </div>
                     </div>
-                    <div id="preview" ng-hide="enhance.selectedItem === null" ng-cloak>
+                    <div id="preview"
+                         ng-hide="enhance.selectedItem === null ||
+                                  enhance.selectedItem >= 15"
+                         ng-cloak>
                         +{{enhance.selectedItem+1}}
                     </div>
-                    <div class="canClick" id="begin"></div>
+                    <div class="canClick" id="enhanceButton"
+                         ng-class="{'enhanceButton-unlit ': enhance.selectedItem === null || 
+                                                            enhance.selectedItem >= 15, 
+                                    'enhanceButton-lit ': enhance.selectedItem !== null &&
+                                                          enhance.selectedItem < 15}"
+                         ng-click="enhance.begin()">
+                    </div>
                 </div>
                 <div id="ferghus"></div>
                 <div class="text" id="greeting">
