@@ -19,3 +19,28 @@
 	bottom: 0;
 	z-index: 0;
 }
+
+#enhanceButton {
+    position: absolute;
+	width: 120px;
+	height: 30px;
+	left: 154px;
+	top: 482px;
+	border-radius: 4px;
+}
+
+.enhanceButton-lit {
+    background-image: url(/assets/img/enhance_lit.jpg);
+}
+
+.enhanceButton-unlit {
+    background-image: url(/assets/img/enhance_unlit.jpg);
+}
+
+.enhanceButton-lit:hover {
+    box-shadow: inset 0px 0px 3px #9C9B9B;
+}
+
+.enhanceButton-lit:active, .amplify-lit.active {
+    box-shadow: inset 0px 0px 10px #9C9B9B;
+}
