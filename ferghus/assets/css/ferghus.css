@@ -1,127 +1,127 @@
 #bg {
-	background-image: url(/assets/img/forge.jpg);
+    background-image: url(/assets/img/forge.jpg);
 }
 
 #enhance {
-	width: 429px;
-	height: 536px;
-	background-image: url(/assets/img/enhance.png);
-	position: absolute;
-	left: 8px;
-	z-index: 3;
+    width: 429px;
+    height: 536px;
+    background-image: url(/assets/img/enhance.png);
+    position: absolute;
+    left: 8px;
+    z-index: 3;
 }
 
 #enhance div {
-	/*background-color: rgba(0, 0, 0, 0.5);
-	border: solid 1px;
-	border-color: rgba(255, 255, 255, 0.5);*/
-	position: absolute;
-	z-index: 4;
+    /*background-color: rgba(0, 0, 0, 0.5);
+    border: solid 1px;
+    border-color: rgba(255, 255, 255, 0.5);*/
+    position: absolute;
+    z-index: 4;
 }
 
 #btnItem, #btnItem div {
-	width: 48px;
-	height: 48px;	
-	padding: 0;
+    width: 48px;
+    height: 48px;
+    padding: 0;
 }
 
 #btnItem {
-	width: 48px;
-	height: 48px;
-	left: 192px;
-	top: 131px;
-	margin-top: 1px;
-	border-radius: 8px;
+    width: 48px;
+    height: 48px;
+    left: 192px;
+    top: 131px;
+    margin-top: 1px;
+    border-radius: 8px;
 }
 
 #btnItem div {
-	width: 100%;
-	height: 46px;
-	line-height: 46px;
-	color: #cacaca;
-	font-size: 1.15em;
-	text-align: center;
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    color: #cacaca;
+    font-size: 1.15em;
+    text-align: center;
 }
 
 #item {
-	width: 48px;
-	height: 48px;
-	line-height: 47px;
-	padding: 0;
-	margin: 2px;
-	background-color: rgba(19, 28, 33, 0.75);
-	border: 1px solid #000;
-	border-radius: 6px;
-	box-shadow:
-		inset 0 0 1px #567,
-		inset 0 0 10px rgba(215, 235, 255, 0.15),
-		0 0 3px #000;
-	color: #cacaca;
-	font-size: 1.05em;
-	text-align: center;
+    width: 48px;
+    height: 48px;
+    line-height: 47px;
+    padding: 0;
+    margin: 2px;
+    background-color: rgba(19, 28, 33, 0.75);
+    border: 1px solid #000;
+    border-radius: 6px;
+    box-shadow:
+        inset 0 0 1px #567,
+        inset 0 0 10px rgba(215, 235, 255, 0.15),
+        0 0 3px #000;
+    color: #cacaca;
+    font-size: 1.05em;
+    text-align: center;
 }
 
 #preview {
-	width: 48px;
-	height: 48px;	
-	line-height: 48px;
-	left: 192px;
-	top: 353px;
-	padding: 0;
-	margin-top: 1px;
-	color: #cacaca;
-	font-size: 1.15em;
-	text-align: center;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    left: 192px;
+    top: 353px;
+    padding: 0;
+    margin-top: 1px;
+    color: #cacaca;
+    font-size: 1.15em;
+    text-align: center;
 }
 
 #ferghus {
-	width: 512px;
-	height: 512px;
-	background-image: url(/assets/img/ferghus.png);
-	position: absolute;
-	bottom: 0;
-	z-index: 0;
+    width: 512px;
+    height: 512px;
+    background-image: url(/assets/img/ferghus.png);
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
 }
 
 #enhanceButton {
-	position: absolute;
-	width: 120px;
-	height: 30px;
-	left: 154px;
-	top: 482px;
-	border-radius: 4px;
+    position: absolute;
+    width: 120px;
+    height: 30px;
+    left: 154px;
+    top: 482px;
+    border-radius: 4px;
 }
 
 .enhanceButton-lit {
-	background-image: url(/assets/img/enhance_lit.jpg);
+    background-image: url(/assets/img/enhance_lit.jpg);
 }
 
 .enhanceButton-unlit {
-	background-image: url(/assets/img/enhance_unlit.jpg);
+    background-image: url(/assets/img/enhance_unlit.jpg);
 cursor: url(/assets/img/cursor/Hero_Normal.cur), auto 
 }
 
 .enhanceButton-lit:hover {
-	box-shadow: inset 0px 0px 3px #9C9B9B;
+    box-shadow: inset 0px 0px 3px #9C9B9B;
 }
 
 .enhanceButton-lit:active, .amplify-lit.active {
-	box-shadow: inset 0px 0px 10px #9C9B9B;
+    box-shadow: inset 0px 0px 10px #9C9B9B;
 }
 
 .popup#progress {
-	width: 339px;
-	height: 389px;
-	background-image: url(/assets/img/wheel_of_death.png);
+    width: 339px;
+    height: 389px;
+    background-image: url(/assets/img/wheel_of_death.png);
 }
 
 #progressBar {
-	width: 192px;
-	height: 6px;
-	background-image: url(/assets/img/progress-filled.jpg);
-	position: absolute;
-	left: 74px;
-	top: 312px;
-	transform-origin: left 3px;
-	transform: scaleX(0);
+    width: 192px;
+    height: 6px;
+    background-image: url(/assets/img/progress-filled.jpg);
+    position: absolute;
+    left: 74px;
+    top: 312px;
+    transform-origin: left 3px;
+    transform: scaleX(0);
 }
