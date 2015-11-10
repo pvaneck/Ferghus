@@ -61,6 +61,19 @@
 	text-align: center;
 }
 
+#preview {
+	width: 48px;
+	height: 48px;	
+	line-height: 48px;
+	left: 192px;
+	top: 353px;
+	padding: 0;
+	margin-top: 1px;
+	color: #cacaca;
+	font-size: 1.15em;
+	text-align: center;
+}
+
 #ferghus {
 	width: 512px;
 	height: 512px;

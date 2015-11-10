@@ -30,6 +30,9 @@
                             +{{enhance.selectedItem}}
                         </div>
                     </div>
+                    <div id="preview" ng-hide="enhance.selectedItem === null" ng-cloak>
+                        +{{enhance.selectedItem+1}}
+                    </div>
                     <div class="canClick" id="begin"></div>
                 </div>
                 <div id="ferghus"></div>
