@@ -4,7 +4,7 @@ function randomInt(min, max) {
 	return Math.floor(mt.random() * (max - min + 1) + min);
 }
 function randomFloat(min, max) {
-	return mt.random() * (max - min) + min;
+	return mt.random_incl() * (max - min) + min;
 }
 
 // Manual .active for buttons (fixes Firefox)

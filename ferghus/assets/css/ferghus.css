@@ -19,12 +19,28 @@
 	z-index: 4;
 }
 
+#btnItem, #btnItem div {
+	width: 48px;
+	height: 48px;	
+	padding: 0;
+}
+
 #btnItem {
 	width: 48px;
 	height: 48px;
 	left: 192px;
 	top: 131px;
+	margin-top: 1px;
 	border-radius: 8px;
+}
+
+#btnItem div {
+	width: 100%;
+	height: 46px;
+	line-height: 46px;
+	color: #cacaca;
+	font-size: 1.15em;
+	text-align: center;
 }
 
 #item {
@@ -55,7 +71,7 @@
 }
 
 #enhanceButton {
-    position: absolute;
+	position: absolute;
 	width: 120px;
 	height: 30px;
 	left: 154px;
@@ -64,17 +80,17 @@
 }
 
 .enhanceButton-lit {
-    background-image: url(/assets/img/enhance_lit.jpg);
+	background-image: url(/assets/img/enhance_lit.jpg);
 }
 
 .enhanceButton-unlit {
-    background-image: url(/assets/img/enhance_unlit.jpg);
+	background-image: url(/assets/img/enhance_unlit.jpg);
 }
 
 .enhanceButton-lit:hover {
-    box-shadow: inset 0px 0px 3px #9C9B9B;
+	box-shadow: inset 0px 0px 3px #9C9B9B;
 }
 
 .enhanceButton-lit:active, .amplify-lit.active {
-    box-shadow: inset 0px 0px 10px #9C9B9B;
+	box-shadow: inset 0px 0px 10px #9C9B9B;
 }

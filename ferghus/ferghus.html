@@ -25,7 +25,11 @@
                                     'enhanceButton-lit ': 0}"
                          ng-click="">
                     </div>
-                    <div class="canClick" id="btnItem" ng-click="enhance.getItem()"></div>
+                    <div class="canClick" id="btnItem" ng-click="enhance.getItem()">
+                        <div ng-hide="enhance.selectedItem === null" ng-cloak>
+                            +{{enhance.selectedItem}}
+                        </div>
+                    </div>
                     <div class="canClick" id="begin"></div>
                 </div>
                 <div id="ferghus"></div>
@@ -34,11 +38,13 @@
                     <h3 class="header">“My shoulder hurts from all that hammering.”</h3>
                 </div>
                 <div class="popup container" id="items">
-                    <div ng-repeat="(y, row) in getArray(3) track by $index"
+                    <div ng-repeat="(y, row) in enhance.getArray(3) track by $index"
                          class="row">
-                        <div ng-repeat="(x, col) in getArray(5) track by $index"
+                        <div ng-repeat="(x, col) in enhance.getArray(5) track by $index"
+                             ng-init="i = y*5+x"
+                             ng-click="enhance.selectItem(i)"
                              class="canClick text col-xs-2" id="item">
-                            +{{y*5+x}}
+                            +{{i}}
                         </div>
                     </div>
                 </div>

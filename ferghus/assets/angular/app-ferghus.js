@@ -7,7 +7,10 @@
         var timeout = $timeout;
         var ctrl = this;
 
+        ctrl.selectedItem = null;
         ctrl.messageOutArray = [];
+
+        var popupItems;	
 
         var messagesToPrint = [
             'Welcome to the Forge. May the RNG Gods be with you.',
@@ -27,17 +30,22 @@
         }
         printMessages();
 
-		scope.getArray = function(n) {
+		ctrl.getArray = function(n) {
 	    	return new Array(n);
 		};
 
 		ctrl.getItem = function() {
-			$('#items').bPopup({
+			popupItems = $('#items').bPopup({
 				speed: 'fast',
 				follow: [false, false],
 				position: [94, 180],
 				opacity: 0.6
-			});	
+			});
+		}
+
+		ctrl.selectItem = function(item) {
+			ctrl.selectedItem = item;
+			popupItems.close();
 		}
 	}]);
 
