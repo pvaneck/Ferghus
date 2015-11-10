@@ -11,6 +11,39 @@
 	z-index: 3;
 }
 
+#enhance div {
+	/*background-color: rgba(0, 0, 0, 0.5);
+	border: solid 1px;
+	border-color: rgba(255, 255, 255, 0.5);*/
+	position: absolute;
+	z-index: 4;
+}
+
+#btnItem {
+	width: 48px;
+	height: 48px;
+	left: 192px;
+	top: 131px;
+	border-radius: 8px;
+}
+
+#item {
+	width: 48px;
+	height: 48px;
+	line-height: 48px;
+	padding: 0;
+	margin: 2px;
+	background-color: rgba(19, 28, 33, 0.75);
+	border: 1px solid #000;
+	border-radius: 6px;
+	box-shadow:
+		inset 0 0 1px #567,
+		inset 0 0 10px rgba(215, 235, 255, 0.15),
+		0 0 3px #000;
+	color: #cacaca;
+	text-align: center;
+}
+
 #ferghus {
 	width: 512px;
 	height: 512px;

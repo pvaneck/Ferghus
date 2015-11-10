@@ -25,13 +25,20 @@
                 }, index * 1500);
             });
         }
-
         printMessages();
 
-
-		$scope.getArray = function(n) {
+		scope.getArray = function(n) {
 	    	return new Array(n);
 		};
+
+		ctrl.getItem = function() {
+			$('#items').bPopup({
+				speed: 'fast',
+				follow: [false, false],
+				position: [94, 180],
+				opacity: 0.6
+			});	
+		}
 	}]);
 
 	app.directive('scrollBottom', function () {
