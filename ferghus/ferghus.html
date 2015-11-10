@@ -17,7 +17,7 @@
         <div id="bg"></div>
         <div id="vignette"></div>
 
-        <div class="container-fluid">
+        <div class="container-fluid"  ng-controller="EnhanceController as enhance">
             <div class="row">
                 <div id="enhance">
                     <a class="canClick" id="item"></a>
@@ -30,6 +30,16 @@
                 </div>
                 <div id="mute">
                     <img id="muteIcon" src="assets/img/headphones.png" alt="Mute">
+                </div>
+                <div id="chatboxContainer">
+                    <div class="text" id="chatbox" scroll-bottom="enhance.messageOutArray">
+                        <div ng-repeat="message in enhance.messageOutArray track by $index">
+                            <div class="row">
+                                <div class="type"><span class='system'>SYSTEM</span></div>
+                                <div class="message">{{message}}</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
