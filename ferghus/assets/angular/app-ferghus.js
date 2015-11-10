@@ -1,6 +1,6 @@
 /** Angular App Code */
 (function() {
-    var app = angular.module('ferghus', [ ]);
+    var app = angular.module('ferghus', ['ngSanitize']);
 
     app.controller('EnhanceController', ['$scope', '$timeout', function($scope, $timeout) {
         var scope = $scope;
@@ -82,13 +82,16 @@
             var prob = enhanceProbabilities[ctrl.selectedItem];
             if (roll < prob) {
                 if (prob >= 100)
-                    addChatMessage('Enhance successful. (' + prob.toFixed(0) + '% success)');
+                    addChatMessage('Enhance successful. (' + prob.toFixed(0) + '% success)<br /> ' +
+                                   '&nbsp; +' + ctrl.selectedItem + ' &#8594; +' + (ctrl.selectedItem + 1)
+                                  );
                 else
-                    addChatMessage('Enhance successful. (' + prob.toFixed(0) + '% success, roll: ' + roll + ')');
+                    addChatMessage('Enhance successful. (' + prob.toFixed(0) + '% success, roll: ' + roll + ') <br />' +
+                                   '&nbsp; +' + ctrl.selectedItem + ' &#8594; +' + (ctrl.selectedItem + 1)
+                                  );
                 ctrl.selectedItem++;
             }
             else {
-                addChatMessage('Enhance failed. (' + prob.toFixed(0) + '% success, roll: ' + roll + ')');
                 switch (ctrl.selectedItem)
                 {
                     case 3:
@@ -104,6 +107,8 @@
                         ctrl.selectedItem = null;
                         break;
                 }
+                message  = 'Enhance failed. (' + prob.toFixed(0) + '% success, roll: ' + roll + ')';
+                addChatMessage(message);
             }
             scope.$digest();
             TweenMax.to(progressBar, 0, {scaleX:0});

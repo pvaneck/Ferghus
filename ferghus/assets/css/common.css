@@ -107,6 +107,7 @@ h3 {
     line-height: 130%;
     overflow: hidden;
     max-height: 200px;
+    padding-bottom: 10px;
 }
 
 #chatbox .row {
