@@ -4,6 +4,10 @@
 
 	app.controller('EnchantController', ['$scope', '$timeout', function($scope, $timeout) {
 
+
+		$scope.getArray = function(n) {
+	    	return new Array(n);
+		};
 	}]);
 
 	app.directive('scrollBottom', function () {
