@@ -63,10 +63,10 @@ $(document).ready(function () {
 
 	// Gapless audio looping
 	audioAmbience.addEventListener('timeupdate', function() {
-	    var buffer = .44;
-	    if(this.currentTime > this.duration - buffer) {
-	        this.currentTime = 0;
-	        this.play();
-	    }
+		var buffer = .44;
+		if(this.currentTime > this.duration - buffer) {
+			this.currentTime = 0;
+			this.play();
+		}
 	}, false);
 });

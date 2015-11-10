@@ -98,7 +98,7 @@
 
 .enhanceButton-unlit {
 	background-image: url(/assets/img/enhance_unlit.jpg);
-    cursor: url(/assets/img/cursor/Hero_Normal.cur), auto 
+cursor: url(/assets/img/cursor/Hero_Normal.cur), auto 
 }
 
 .enhanceButton-lit:hover {

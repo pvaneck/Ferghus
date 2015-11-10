@@ -1,5 +1,5 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
+    display: none !important;
 }
 
 @font-face {
@@ -14,9 +14,9 @@
 }
 
 body {
-	padding-left: 24px;
-	padding-right: 24px;
-	cursor: url(/assets/img/cursor/Hero_Normal.cur), auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    cursor: url(/assets/img/cursor/Hero_Normal.cur), auto;
 }
 
 .b-modal {
@@ -24,74 +24,74 @@ body {
 }
 
 a, #mute, .canClick {
-	cursor: url(/assets/img/cursor/Hero_press.cur) 7 0, auto;
+    cursor: url(/assets/img/cursor/Hero_press.cur) 7 0, auto;
 }
 
 .canType {
-	cursor: url(/assets/img/cursor/Hero_ibeam.cur) 2 8, auto;
+    cursor: url(/assets/img/cursor/Hero_ibeam.cur) 2 8, auto;
 }
 
 .text {
-	font-family: goudysans_md_btmedium, Arial, Helvetica, sans-serif;
+    font-family: goudysans_md_btmedium, Arial, Helvetica, sans-serif;
 }
 
 h2 {
-	color: #eee;
+    color: #eee;
 }
 
 h3 {
-	color: #aaa;
-	margin-top: 12px;
+    color: #aaa;
+    margin-top: 12px;
 }
 
 #bg {
-	min-width: 1280px;
-	width: 100vw;
-	height: 100vh;
-	position: fixed;
-	transform: translate(-64px, 0) scale(1.1, 1.1) rotate(0.0003deg);
-	top: -5%;
-	left: 0px;
-	z-index: -1;
+    min-width: 1280px;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    transform: translate(-64px, 0) scale(1.1, 1.1) rotate(0.0003deg);
+    top: -5%;
+    left: 0px;
+    z-index: -1;
 }
 
 @media screen and (max-width: 1280px) {
-	#bg {
-		left: 50%;
-		margin-left: -640px;
-	}
+    #bg {
+       left: 50%;
+       margin-left: -640px;
+    }
 }
 
 #vignette {
-	width: 100vw;
-	height: 100vh;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 1;
-	box-shadow: inset 0px -100px 160px 0px rgba(0,0,0,0.75);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    box-shadow: inset 0px -100px 160px 0px rgba(0,0,0,0.75);
 }
 
 #greeting {
-	width: auto;
-	height: auto;
-	position: absolute;
-	bottom: 0;
-	padding-bottom: 16px;
-	z-index: 2;
-	text-shadow: 0 0 10px #000;
+    width: auto;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 16px;
+    z-index: 2;
+    text-shadow: 0 0 10px #000;
 }
 
 #greeting h2 {
-	font-size: 2.3em;
+    font-size: 2.3em;
 }
 
 #greeting h3 {
-	font-size: 1.85em;
+    font-size: 1.85em;
 }
 
 .popup {
-	display: none;
+    display: none;
 }
 
 #chatboxContainer {
@@ -146,12 +146,12 @@ h3 {
 }
 
 #mute {
-	width: 72px;
-	height: 48px;
-	background-image: url(/assets/img/texture.jpg);
-	border: 1px solid #000;
-	border-radius: 6px;
-	box-shadow: inset 0 0 3px #888, 0 0 3px #000;
+    width: 72px;
+    height: 48px;
+    background-image: url(/assets/img/texture.jpg);
+    border: 1px solid #000;
+    border-radius: 6px;
+    box-shadow: inset 0 0 3px #888, 0 0 3px #000;
     position: absolute;
     top: 0;
     right: 0;
@@ -162,7 +162,7 @@ h3 {
 }
 
 #muteIcon {
-	max-width: 100%;
+    max-width: 100%;
     height: auto;
     vertical-align: middle;
     border: 0;
