@@ -24,6 +24,8 @@
 
         function addChatMessage(message) {
             ctrl.messageOutArray.push(message);
+            if (ctrl.messageOutArray.length > 5)
+                ctrl.messageOutArray.shift();
         }
 
         function printMessages() {
@@ -37,7 +39,7 @@
 
         ctrl.getArray = function(n) {
             return new Array(n);
-        };
+        }
 
         ctrl.getItem = function() {
             popupItems = $('#items').bPopup({
@@ -80,15 +82,13 @@
             var roll = randomFloat(0, 100);
             roll = Math.round(roll*10000)/10000;
             var prob = enhanceProbabilities[ctrl.selectedItem];
+            var desc = '<br /> &nbsp; +' + ctrl.selectedItem;
             if (roll < prob) {
+                desc += ' &#8594; +' + (ctrl.selectedItem + 1);
                 if (prob >= 100)
-                    addChatMessage('Enhance successful. (' + prob.toFixed(0) + '% success)<br /> ' +
-                                   '&nbsp; +' + ctrl.selectedItem + ' &#8594; +' + (ctrl.selectedItem + 1)
-                                  );
+                    addChatMessage('Enhance successful. (' + prob.toFixed(0) + '% success)' + desc);
                 else
-                    addChatMessage('Enhance successful. (' + prob.toFixed(0) + '% success, roll: ' + roll + ') <br />' +
-                                   '&nbsp; +' + ctrl.selectedItem + ' &#8594; +' + (ctrl.selectedItem + 1)
-                                  );
+                    addChatMessage('Enhance successful. (' + prob.toFixed(0) + '% success, roll: ' + roll + ')' + desc);
                 ctrl.selectedItem++;
             }
             else {
@@ -96,18 +96,21 @@
                 {
                     case 3:
                     case 4:
+                        desc += ' &#8594; +' + (ctrl.selectedItem - 1);
                         ctrl.selectedItem--;
                         break;
                     case 5:
                     case 6:
                     case 7:
+                        desc += ' &#8594; +0';
                         ctrl.selectedItem = 0;
                         break;
                     default:
+                        desc += ' destroyed.';
                         ctrl.selectedItem = null;
                         break;
                 }
-                message  = 'Enhance failed. (' + prob.toFixed(0) + '% success, roll: ' + roll + ')';
+                message  = 'Enhance failed. (' + prob.toFixed(0) + '% success, roll: ' + roll + ')' + desc;
                 addChatMessage(message);
             }
             scope.$digest();

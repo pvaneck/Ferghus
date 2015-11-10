@@ -98,15 +98,15 @@
 
 .enhanceButton-unlit {
     background-image: url(/assets/img/enhance_unlit.jpg);
-cursor: url(/assets/img/cursor/Hero_Normal.cur), auto 
+    cursor: url(/assets/img/cursor/Hero_Normal.cur), auto;
 }
 
 .enhanceButton-lit:hover {
-    box-shadow: inset 0px 0px 3px #9C9B9B;
+    box-shadow: inset 0px 0px 3px #9c9b9b;
 }
 
-.enhanceButton-lit:active, .amplify-lit.active {
-    box-shadow: inset 0px 0px 10px #9C9B9B;
+.enhanceButton-lit:active, .enhanceButton-lit.active {
+    box-shadow: inset 0px 0px 10px #9c9b9b;
 }
 
 .popup#progress {

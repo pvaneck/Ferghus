@@ -179,6 +179,8 @@
 
         function addChatMessage(message) {
             ctrl.messageOutArray.push(message);
+            if (ctrl.messageOutArray.length > 8)
+                ctrl.messageOutArray.shift();
         }
 
         function printMessages() {
