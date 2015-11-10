@@ -81,17 +81,33 @@
             roll = Math.round(roll*10000)/10000;
             var prob = enhanceProbabilities[ctrl.selectedItem];
             if (roll < prob) {
-                addChatMessage('Enhance successful. (' + prob.toFixed(0) + '% success, roll: ' + roll + ')');
+            	if (prob >= 100)
+                	addChatMessage('Enhance successful. (' + prob.toFixed(0) + '% success)');
+                else
+                	addChatMessage('Enhance successful. (' + prob.toFixed(0) + '% success, roll: ' + roll + ')');
                 ctrl.selectedItem++;
             }
             else {
                 addChatMessage('Enhance failed. (' + prob.toFixed(0) + '% success, roll: ' + roll + ')');
-                ctrl.selectedItem = null;
+                switch (ctrl.selectedItem)
+                {
+                	case 3:
+                	case 4:
+                		ctrl.selectedItem--;
+                		break;
+                	case 5:
+                	case 6:
+                	case 7:
+                		ctrl.selectedItem = 0;
+                		break;
+                	default:
+                		ctrl.selectedItem = null;
+                		break;
+                }
             }
-            scope.$apply();
+            scope.$digest();
             TweenMax.to(progressBar, 0, {scaleX:0});
         }
-        
 	}]);
 
 	app.directive('scrollBottom', function () {
