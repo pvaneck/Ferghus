@@ -29,7 +29,7 @@ The server will use 0.0.0.0:8000.
 ####Related links
 
 Evernote - Design document
-- https://www.evernote.com/Home.action#n=c1f7e1de-5919-4a2e-a64a-a4fc14375afa&ses=4&sh=2&sds=5&
+- https://www.evernote.com/shard/s257/sh/c1f7e1de-5919-4a2e-a64a-a4fc14375afa/ca8b385ac0c9608f7881e0d780cbba38
 
 Trello - Development tracker
 - https://trello.com/b/jIRt5WOu/the-forge
